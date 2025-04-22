@@ -24,8 +24,6 @@ const Hero = () => {
             <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight">
               <span className="text-portfolio-primary block mb-2">{heroContent.title.highlight}</span>
               <span className="text-3xl sm:text-4xl lg:text-5xl block mb-4 text-muted-foreground">Henrik Vårhäll</span>
-              <span className="block mb-2">{heroContent.title.line1}</span>
-              <span className="block">{heroContent.title.line2}</span>
             </h1>
             
             <p className="text-lg sm:text-xl text-muted-foreground max-w-xl mx-auto lg:mx-0">
