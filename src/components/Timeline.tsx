@@ -12,6 +12,7 @@ import {
 import { useIsMobile } from '@/hooks/use-mobile'
 import { Button } from '@/components/ui/button'
 import { HoverCard, HoverCardTrigger, HoverCardContent } from '@/components/ui/hover-card'
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip'
 
 // Icon color scheme mapping for different timeline types
 const typeIconColorScheme = {
@@ -101,29 +102,30 @@ const TimelineItem = ({
                 {item.year}
               </span>
             </div>
-            <div className="flex items-center justify-between">
+            
+            <div className="flex items-start justify-between mb-1">
               <h3 className="text-xl font-bold">{item.title}</h3>
               
-              {/* Add visit website link for Critical Showdown */}
+              {/* Add more visible visit website button for Critical Showdown */}
               {isCriticalShowdown && (
-                <HoverCard>
-                  <HoverCardTrigger asChild>
-                    <a 
-                      href="https://www.criticalshowdown.com" 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="flex items-center text-portfolio-primary hover:text-portfolio-primary/80 transition-colors ml-3 cursor-pointer"
-                    >
-                      <span className="mr-1 text-sm hidden sm:inline">Visit</span>
-                      <ExternalLink className="h-4 w-4" />
-                    </a>
-                  </HoverCardTrigger>
-                  <HoverCardContent className="p-2">
-                    <p className="text-sm">Visit Critical Showdown website</p>
-                  </HoverCardContent>
-                </HoverCard>
+                <Button 
+                  variant="outline" 
+                  size="sm" 
+                  className="flex items-center ml-2 bg-portfolio-primary text-white hover:bg-portfolio-primary/90 border-none"
+                  asChild
+                >
+                  <a 
+                    href="https://www.criticalshowdown.com" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                  >
+                    <span className="mr-1 text-sm">Visit Site</span>
+                    <ExternalLink className="h-4 w-4" />
+                  </a>
+                </Button>
               )}
             </div>
+            
             <p className="text-muted-foreground">{item.company}</p>
             <Separator className="my-3" />
             
