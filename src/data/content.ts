@@ -248,7 +248,7 @@ export const expertiseContent = {
 
 // About section content
 export const aboutContent = {
-  headline: "I'm a UX/UI Designer passionate about creating meaningful digital experiences",
+  headline: "Born into tech, fostered in design.",
   paragraphs: [
     "Born in ‘86 in Linköping, Sweden (or actually in the outskirts). I grew up playing computer and video games since I was four, but I’ve also always enjoyed sports so I was pretty weird being a nerd as well as a sports guy. Some of my fondest memories from childhood come from playing F-Zero, Zelda, Secret of Mana and NHL96. I built my first computer at 12 years old, with help from my brother of course and it’s still one of the things I enjoy the most even though it doesn’t happen as often any more. I went to a technical IT gymnasium by the age of 16 and spent my time playing floorball, fiddling around in Photoshop and playing World of Warcraft or Counter-Strike.",
     "By that time you might guess I should have had things figured out and just gone straight into computer science. Unfortunately, I’m clueless about any sort of advanced math, so I could never go that route. I did enjoy being creative a lot but I had no idea how to make that into a career.",
@@ -256,17 +256,6 @@ export const aboutContent = {
     "So I fixed some of my bad grades during an extra year of school (komvux in Sweden) so that I could get accepted. In the end of that year I applied to 7 programs similar to each other in interaction design and got accepted into all my top three ones! So I could pick and choose, and the choice fell on Linnaeus University (or Högskolan i Kalmar as it was called when I started).",
     "Had some great years there, and learned a lot of things that set a good basis for getting into design work! It was here that I got particularly interested in the design craft, perception and psychology."
   ],
-  awards: [
-    {
-      name: 'Design Excellence Award',
-      description: 'Recognized for outstanding contribution to user experience design in the healthcare sector',
-      icon: 'Award'
-    },
-    {
-      name: 'UX Design Innovation',
-      description: 'Award for innovative approach to design systems implementation at Abilia',
-      icon: 'Award'
-    }
   ]
 };
 
