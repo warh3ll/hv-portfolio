@@ -10,7 +10,7 @@ export interface TimelineItemProps {
   company: string;
   description: string;
   tags?: string[];
-  type: 'job' | 'freelance' | 'education';
+  type: 'job' | 'freelance' | 'education' | 'personal project';
 }
 
 export const timelineData: TimelineItemProps[] = [
@@ -34,56 +34,65 @@ export const timelineData: TimelineItemProps[] = [
   },
   {
     id: 3,
-    year: '2020 - 2021',
-    title: 'Freelance UX Consultant',
-    company: 'Various Clients',
-    description: 'Provided UX consultancy for startups and established businesses in fintech and healthcare sectors.',
-    tags: ['Consulting', 'UI Design', 'Prototyping'],
-    type: 'freelance'
+    year: '2018 - 2018',
+    title: 'UX Designer',
+    company: 'Svenska Spel',
+    description: 'Research, UX and visual design for a conceptual dashboard system with heavy focus on statistics. Giving end-users the power to change their lives for the better.',
+    tags: ['Consultant', 'UI Design', 'Prototyping'],
+    type: 'job'
   },
   {
     id: 4,
-    year: '2018 - 2020',
-    title: 'UX/UI Designer',
-    company: 'Creative Agency XYZ',
-    description: 'Designed user interfaces for web and mobile applications across diverse industries including e-commerce and education.',
-    tags: ['Mobile Design', 'User Flows', 'Wireframing'],
+    year: '2016 - 2017',
+    title: 'UX Designer',
+    company: 'Västtrafik',
+    description: 'Västtrafiks website needed to enter a new generation, my role as a UX Designer in this project was both for user research -- primarily usability testing -- and interaction design. Through 6 major testing periods and continuous small scale testing I could verify the user needs and goals and convert them to design improvements at a quick pace.',
+    tags: ['Responsive Design', 'Usability Testing', 'Interaction Design', 'Consultant'],
     type: 'job'
   },
   {
     id: 5,
-    year: '2015 - 2018',
-    title: 'Product Designer',
-    company: 'Mobile App Startup',
-    description: 'Was part of the core team that designed and launched a health tracking app with over 500,000 downloads in its first year.',
-    tags: ['Mobile App Design', 'Interaction Design', 'Analytics'],
+    year: '2015 - 2016',
+    title: 'UX Designer',
+    company: 'AstraZeneca',
+    description: 'As a UX Designer I participated in projects concerning smart companion applications to help patients manage their asthma and to give their doctor a better view of their health status.',
+    tags: ['Medtech', 'Product Design', 'Usability Testing', 'Hardware Design', 'Consultant'],
     type: 'job'
   },
   {
     id: 6,
-    year: '2012 - 2015',
-    title: 'UI Designer',
-    company: 'Web Design Studio',
-    description: 'Created responsive web designs for small to medium-sized businesses with a focus on improving conversion rates.',
-    tags: ['Web Design', 'Responsive Design', 'CSS'],
+    year: '2014 - 2015',
+    title: 'UX Designer',
+    company: 'Volvo Car Retail Solutions',
+    description: 'Designed the sales management web platform for Volvo retailers and a concept design for the new workshop management system.',
+    tags: ['Consultant', 'Sketch', 'UXPin', 'Research'],
+    type: 'job'
+  },
+  {
+    id: 6,
+    year: '2014 - 2020',
+    title: 'UX Designer/Senior UX Designer',
+    company: 'inUse Experience',
+    description: 'For nearly 6 years I worked at inUse (RIP) together with about 100 other excellent designers, I learned so much from them, and the company really wanted to make us grow during all those years. I feel priviliged to have been part of that.',
+    tags: ['Design Bureau'],
     type: 'job'
   },
   {
     id: 7,
-    year: '2010 - 2012',
-    title: 'Junior Designer',
-    company: 'Marketing Agency',
-    description: 'Assisted senior designers with creating visual assets for digital marketing campaigns.',
-    tags: ['Visual Design', 'Brand Design', 'Marketing'],
+    year: '2012 - 2014',
+    title: 'Support Tech/Designer',
+    company: 'CompuGroup Medical',
+    description: 'User experience design and user research for an electronic health record (EHR) system. I also programmed some custom reports and certificates for customers.',
+    tags: ['Research', 'Medtech'],
     type: 'job'
   },
   {
     id: 8,
-    year: '2008 - 2010',
-    title: 'Design Internship',
-    company: 'Design Studio',
-    description: 'Supported the design team with various projects while learning fundamental design principles and tools.',
-    tags: ['Design Fundamentals', 'Adobe Suite', 'Typography'],
+    year: '2008 - 2011',
+    title: 'Bachelor of Informatics (Interaction Design)',
+    company: 'Linnaeus University',
+    description: 'I spent three years in the small city of Kalmar on the east coast of Sweden studying interaction design, as it was called then! I still prefer that term to be honest.',
+    tags: ['University'],
     type: 'education'
   }
 ];
