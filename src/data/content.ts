@@ -36,7 +36,7 @@ export const timelineData: TimelineItemProps[] = [
     year: '2021 - 2022',
     title: 'Senior UX Designer',
     company: 'Parkeringsbolaget',
-    description: "Doing UX/UI design for the company portal at Parkeringsbolaget in Gothenburg. Focus is on improving the visual user experience as well as adapting existing and new features as we learn more on user behaviours. Creating components and pushing the design system forwards, as well as overhauling the design process. Doing UX/UI design for the company portal at Parkeringsbolaget in Gothenburg. Focus is on improving the visual user experience as well as adapting existing and new features as we learn more on user behaviours. Creating components and pushing the design system forwards, as well as overhauling the design process.",
+    description: "Doing UX/UI design for the company portal at Parkeringsbolaget in Gothenburg. Focus is on improving the visual user experience as well as adapting existing and new features as we learn more on user behaviours. Creating components and pushing the design system forwards, as well as overhauling the design process.",
     tags: ['Product Design', 'Design Systems', 'Research', 'Visual Design', 'Consultant'],
     type: 'job'
   },
@@ -184,6 +184,30 @@ export const heroContent = {
   description: "I've been a designer in the field since 2012, mostly as a full-stack UX Designer. I'm experienced, and love, everything from being involved in everyday design work in Figma to lead roles with a particular interest in design systems, problem solving, product ecosystems and design processes.",
   profileImage: "/lovable-uploads/4afe3628-db26-4685-9dda-109b5b8ad241.png"
 };
+
+// Personal images for carousel
+export const personalImages = [
+  {
+    src: "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?auto=format&fit=crop&w=800&q=80",
+    alt: "Enjoying nature with family",
+    caption: "Weekend hiking trip"
+  },
+  {
+    src: "https://images.unsplash.com/photo-1721322800607-8c38375eef04?auto=format&fit=crop&w=800&q=80",
+    alt: "My home workspace",
+    caption: "Where the magic happens"
+  },
+  {
+    src: "https://images.unsplash.com/photo-1582562124811-c09040d0a901?auto=format&fit=crop&w=800&q=80",
+    alt: "My cat helping with design work",
+    caption: "My feline design assistant"
+  },
+  {
+    src: "https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&w=800&q=80",
+    alt: "Travel photography from my last trip",
+    caption: "Exploring new places"
+  }
+];
 
 // About section content
 export const aboutContent = {

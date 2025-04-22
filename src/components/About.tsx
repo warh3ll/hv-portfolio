@@ -2,6 +2,7 @@
 import React from 'react';
 import { User, Code, Palette, Users, Award } from 'lucide-react';
 import { aboutContent } from '@/data/content';
+import PersonalImageCarousel from './PersonalImageCarousel';
 
 // Map icon names to components
 const iconMap: Record<string, React.ComponentType<any>> = {
@@ -63,6 +64,11 @@ const About = () => {
                   );
                 })}
               </div>
+            </div>
+            
+            {/* Personal Image Carousel */}
+            <div className="mt-8">
+              <PersonalImageCarousel />
             </div>
           </div>
           
