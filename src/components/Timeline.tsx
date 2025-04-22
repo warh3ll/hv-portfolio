@@ -36,7 +36,7 @@ const timelineData: TimelineItemProps[] = [
     year: '2021 - 2023',
     title: 'UX Design Lead',
     company: 'Digital Solutions Inc.',
-    description: 'Managed a team of 4 designers working on the company's flagship product, increasing user satisfaction scores by 35%.',
+    description: "Managed a team of 4 designers working on the company's flagship product, increasing user satisfaction scores by 35%.",
     tags: ['Product Design', 'User Testing', 'Management'],
     type: 'job'
   },
