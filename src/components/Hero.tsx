@@ -16,7 +16,7 @@ const Hero = () => {
   return (
     <section 
       id="hero" 
-      className="min-h-screen flex items-center bg-gradient-to-br from-white to-portfolio-secondary dark:from-gray-900 dark:to-gray-800 pt-20"
+      className="min-h-screen flex items-center bg-gradient-to-br from-white to-portfolio-secondary dark:from-gray-900 dark:to-gray-800 pt-20 pb-0"
     >
       <div className="container mx-auto">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
@@ -69,7 +69,7 @@ const Hero = () => {
           </div>
         </div>
         
-        <div className="mt-16 sm:mt-24 flex justify-center">
+        <div className="mt-4 sm:mt-8 flex justify-center">
           <button 
             onClick={scrollToProjects}
             className="p-3 rounded-full bg-white dark:bg-gray-800 shadow-md text-portfolio-primary hover:bg-portfolio-primary hover:text-white dark:hover:text-white transition-colors duration-300"

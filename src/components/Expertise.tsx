@@ -18,7 +18,7 @@ const iconMap: Record<string, React.ComponentType<any>> = {
 
 const Expertise = () => {
   return (
-    <section id="expertise" className="section py-12 bg-white dark:bg-gray-850">
+    <section id="expertise" className="py-4 bg-white dark:bg-gray-850">
       <div className="container">
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-5">
           {expertiseContent.skills.slice(0, 6).map((skill, index) => {
