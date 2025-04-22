@@ -181,7 +181,7 @@ export const heroContent = {
     line1: "Making Impactful",
     line2: "Experiences",
   },
-  description: "I've been a designer in the field since 2012, mostly as a full-stack UX Designer. I'm experienced, and love, everything from everyday design work in Figma to lead roles with a particular interest in design systems, value creation, user needs analysis, product ecosystems and design processes.",
+  description: "I've been a designer in the field since 2012, mostly as a full-stack UX Designer. I'm experienced, and love, everything from being involved in everyday design work in Figma to lead roles with a particular interest in design systems, problem solving, product ecosystems and design processes.",
   profileImage: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
 };
 
