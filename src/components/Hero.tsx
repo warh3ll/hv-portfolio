@@ -28,7 +28,7 @@ const Hero = () => {
             </h1>
             
             <p className="text-lg sm:text-xl text-muted-foreground max-w-xl mx-auto lg:mx-0">
-              Hi, I'm a passionate UX/UI designer focused on creating intuitive digital experiences that solve real problems and delight users.
+              I’m a designer working in the field since 2012, mostly as a full-stack UX Designer, but in the last few years I’ve moved more towards lead roles with a particular interest in design systems, value creation, user needs analysis, product ecosystems and design processes.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
