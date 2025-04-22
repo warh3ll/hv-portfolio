@@ -3,7 +3,8 @@ import React from 'react';
 import { 
   Clock,
   Briefcase,
-  CalendarDays
+  CalendarDays,
+  Rocket
 } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
@@ -22,6 +23,8 @@ const TimelineItem = ({ item, isLast }: { item: TimelineItemProps, isLast: boole
         return <Clock className="h-6 w-6" />;
       case 'education':
         return <CalendarDays className="h-6 w-6" />;
+      case 'personal project':
+        return <Rocket className="h-6 w-6" />;
       default:
         return <Briefcase className="h-6 w-6" />;
     }
