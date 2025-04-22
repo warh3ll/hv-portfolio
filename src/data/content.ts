@@ -209,40 +209,60 @@ export const personalImages = [
   }
 ];
 
-// About section content
-export const aboutContent = {
-  headline: "I'm a UX/UI Designer passionate about creating meaningful digital experiences",
-  paragraphs: [
-    "With over 5 years of experience in the digital design industry, I've had the opportunity to work with various clients from startups to established enterprises. My approach combines user-centered design principles with business goals to create solutions that are both functional and beautiful.",
-    "I believe that great design is not just about how things look, but how they work. My process involves deep user research, iterative design, and constant validation to ensure that the final product truly meets user needs.",
-    "When I'm not designing, you can find me exploring new design trends, attending UX workshops, or mentoring aspiring designers."
-  ],
+// Expertise section content
+export const expertiseContent = {
+  description: "Specializing in user-centered design approaches with a focus on creating accessible, scalable, and cohesive product experiences.",
   skills: [
     { 
-      name: 'User Research', 
+      name: 'UX Design', 
       icon: 'User', 
-      description: 'Conducting user interviews, usability testing, and creating personas' 
+      description: 'Creating intuitive user experiences through wireframing, prototyping, and iterative design processes.' 
     },
     { 
       name: 'UI Design', 
       icon: 'Palette', 
-      description: 'Creating wireframes, mockups, and high-fidelity prototypes' 
+      description: 'Crafting visually appealing interfaces with a focus on consistency, brand alignment, and visual hierarchy.' 
     },
     { 
-      name: 'Front-end Development', 
-      icon: 'Code', 
-      description: 'Translating designs into HTML, CSS, and JavaScript' 
+      name: 'User Research', 
+      icon: 'FileSearch', 
+      description: 'Conducting interviews, usability testing, and surveys to gather insights that inform design decisions.' 
     },
     { 
-      name: 'Collaboration', 
-      icon: 'Users', 
-      description: 'Working effectively with cross-functional teams' 
+      name: 'Accessibility', 
+      icon: 'Accessibility', 
+      description: 'Ensuring digital products are accessible to all users, including those with disabilities, following WCAG guidelines.' 
+    },
+    { 
+      name: 'Design Systems', 
+      icon: 'Component', 
+      description: 'Building scalable design systems that ensure consistency across products and accelerate development workflows.' 
+    },
+    { 
+      name: 'Product Ecosystems', 
+      icon: 'Layers', 
+      description: 'Designing cohesive experiences across multiple platforms and touchpoints within complex product ecosystems.' 
     }
+  ]
+};
+
+// About section content
+export const aboutContent = {
+  headline: "I'm a UX/UI Designer passionate about creating meaningful digital experiences",
+  paragraphs: [
+    "With over 10 years of experience in the design industry, I've worked with clients across healthcare, fintech, retail, and more. My approach combines user-centered design with business objectives to create solutions that are both impactful and beautiful.",
+    "I believe that great design is invisible—it should enable users to accomplish their goals effortlessly, without calling attention to itself. My process involves deep understanding of user needs, business requirements, and technical constraints.",
+    "When I'm not designing, you can find me exploring new design tools, contributing to design communities, or enjoying nature with my family."
   ],
   awards: [
     {
       name: 'Design Excellence Award',
-      description: 'Recognized for outstanding contribution to user experience design',
+      description: 'Recognized for outstanding contribution to user experience design in the healthcare sector',
+      icon: 'Award'
+    },
+    {
+      name: 'UX Design Innovation',
+      description: 'Award for innovative approach to design systems implementation at Abilia',
       icon: 'Award'
     }
   ]
