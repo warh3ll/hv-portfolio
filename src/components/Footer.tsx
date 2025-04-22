@@ -41,7 +41,7 @@ const Footer = () => {
             onClick={scrollToTop} 
             variant="outline" 
             size="default" 
-            className="bg-white/20 text-white border-white/40 hover:bg-white/30 hover:text-white mt-4 md:mt-0 flex items-center gap-2"
+            className="text-white border-white/40 hover:bg-white/10 hover:text-white mt-4 md:mt-0 flex items-center gap-2"
             aria-label="Back to top"
           >
             <span>Back to top</span>
