@@ -113,7 +113,7 @@ const TimelineItem = ({ item, isLast }: { item: TimelineItemProps, isLast: boole
   return (
     <div className="relative flex items-start">
       {/* Timeline line and dot */}
-      <div className="absolute left-8 top-0 bottom-0 flex flex-col items-center">
+      <div className="absolute left-0 top-0 bottom-0 flex flex-col items-center">
         <div className={cn(
           "h-16 w-0.5 bg-portfolio-primary/20",
           {"opacity-0": item.id === 1}
@@ -127,8 +127,8 @@ const TimelineItem = ({ item, isLast }: { item: TimelineItemProps, isLast: boole
       </div>
 
       {/* Timeline content */}
-      <div className="ml-28 pb-10 pt-3">
-        <Card className="max-w-3xl hover:shadow-lg transition-shadow duration-300">
+      <div className="ml-24 pb-10 pt-3 w-full">
+        <Card className="w-full hover:shadow-lg transition-shadow duration-300">
           <CardContent className="p-6">
             <div className="mb-2">
               <span className="inline-block px-3 py-1 text-sm font-medium rounded-full bg-portfolio-primary/10 text-portfolio-primary">
@@ -167,7 +167,7 @@ const Timeline = () => {
           A chronological journey through my professional career, showcasing key positions and projects that have shaped my expertise as a designer.
         </p>
         
-        <div className="relative mt-10">
+        <div className="relative mt-10 max-w-[800px] mx-auto">
           {timelineData.map((item, index) => (
             <TimelineItem 
               key={item.id} 
