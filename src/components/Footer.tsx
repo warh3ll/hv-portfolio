@@ -39,13 +39,13 @@ const Footer = () => {
           <p>&copy; {year} Henrik Vårhäll. All rights reserved.</p>
           <Button 
             onClick={scrollToTop} 
-            variant="ghost" 
-            size="icon" 
-            className="text-white hover:bg-white/10 mt-4 md:mt-0"
+            variant="outline" 
+            size="default" 
+            className="text-white border-white/20 hover:bg-white/10 mt-4 md:mt-0 flex items-center gap-2"
             aria-label="Back to top"
           >
+            <span>Back to top</span>
             <ChevronUp className="h-5 w-5" />
-            <span className="sr-only">Back to top</span>
           </Button>
         </div>
       </div>
