@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react'
 import { Menu, X } from 'lucide-react'
 import { Button } from '@/components/ui/button'
@@ -44,19 +45,19 @@ const Header = () => {
         <nav className="hidden md:flex space-x-8">
           <button
             onClick={() => scrollToSection('projects')}
-            className="text-foreground hover:text-portfolio-primary transition-colors text-weight: 600"
+            className="text-foreground hover:text-portfolio-primary transition-colors font-bold"
           >
             Case
           </button>
           <button
             onClick={() => scrollToSection('timeline')}
-            className="text-foreground hover:text-portfolio-primary transition-colors"
+            className="text-foreground hover:text-portfolio-primary transition-colors font-bold"
           >
             Experience
           </button>
           <button
             onClick={() => scrollToSection('about')}
-            className="text-foreground hover:text-portfolio-primary transition-colors"
+            className="text-foreground hover:text-portfolio-primary transition-colors font-bold"
           >
             About
           </button>
@@ -78,19 +79,19 @@ const Header = () => {
           <div className="container py-4 flex flex-col space-y-4">
             <button
               onClick={() => scrollToSection('projects')}
-              className="py-2 text-foreground hover:text-portfolio-primary transition-colors"
+              className="py-2 text-foreground hover:text-portfolio-primary transition-colors font-bold"
             >
               Projects
             </button>
             <button
               onClick={() => scrollToSection('timeline')}
-              className="py-2 text-foreground hover:text-portfolio-primary transition-colors"
+              className="py-2 text-foreground hover:text-portfolio-primary transition-colors font-bold"
             >
               Experience
             </button>
             <button
               onClick={() => scrollToSection('about')}
-              className="py-2 text-foreground hover:text-portfolio-primary transition-colors"
+              className="py-2 text-foreground hover:text-portfolio-primary transition-colors font-bold"
             >
               About
             </button>
