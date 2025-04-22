@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react'
-import { Clock, Briefcase, Atom, Rocket, ChevronDown } from 'lucide-react'
+import { Clock, Briefcase, Atom, Rocket, ChevronDown, ExternalLink } from 'lucide-react'
 import { Card, CardContent } from '@/components/ui/card'
 import { Separator } from '@/components/ui/separator'
 import { cn } from '@/lib/utils'
@@ -11,6 +11,7 @@ import {
 } from '@/data/content'
 import { useIsMobile } from '@/hooks/use-mobile'
 import { Button } from '@/components/ui/button'
+import { HoverCard, HoverCardTrigger, HoverCardContent } from '@/components/ui/hover-card'
 
 // Icon color scheme mapping for different timeline types
 const typeIconColorScheme = {
@@ -60,6 +61,9 @@ const TimelineItem = ({
     }
   }
 
+  // Check if the current item is Critical Showdown
+  const isCriticalShowdown = item.title === "Critical Showdown"
+
   return (
     <div className={cn('relative flex', isMobile ? 'flex-col' : 'items-start')}>
       {/* Timeline line and dot - only show on desktop */}
@@ -97,7 +101,29 @@ const TimelineItem = ({
                 {item.year}
               </span>
             </div>
-            <h3 className="text-xl font-bold">{item.title}</h3>
+            <div className="flex items-center justify-between">
+              <h3 className="text-xl font-bold">{item.title}</h3>
+              
+              {/* Add visit website link for Critical Showdown */}
+              {isCriticalShowdown && (
+                <HoverCard>
+                  <HoverCardTrigger asChild>
+                    <a 
+                      href="https://www.criticalshowdown.com" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="flex items-center text-portfolio-primary hover:text-portfolio-primary/80 transition-colors ml-3 cursor-pointer"
+                    >
+                      <span className="mr-1 text-sm hidden sm:inline">Visit</span>
+                      <ExternalLink className="h-4 w-4" />
+                    </a>
+                  </HoverCardTrigger>
+                  <HoverCardContent className="p-2">
+                    <p className="text-sm">Visit Critical Showdown website</p>
+                  </HoverCardContent>
+                </HoverCard>
+              )}
+            </div>
             <p className="text-muted-foreground">{item.company}</p>
             <Separator className="my-3" />
             
