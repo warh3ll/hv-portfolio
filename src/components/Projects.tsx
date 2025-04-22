@@ -40,7 +40,7 @@ const Projects = () => {
               variant={filter === filterName ? "default" : "outline"}
               className={filter === filterName 
                 ? "bg-portfolio-primary hover:bg-portfolio-primary/80" 
-                : "border-portfolio-primary text-portfolio-primary hover:bg-portfolio-primary/10 dark:text-portfolio-primary dark:border-portfolio-primary"}
+                : "border-portfolio-primary text-portfolio-primary hover:bg-transparent dark:hover:bg-gray-800/30 hover:bg-portfolio-primary/10 dark:text-portfolio-primary dark:border-portfolio-primary dark:bg-transparent"}
               onClick={() => {
                 setFilter(filterName);
                 setVisibleProjects(4);
@@ -66,7 +66,7 @@ const Projects = () => {
             <Button 
               variant="outline" 
               size="lg"
-              className="border-portfolio-primary text-portfolio-primary hover:bg-portfolio-primary/10 dark:text-portfolio-primary dark:border-portfolio-primary"
+              className="border-portfolio-primary text-portfolio-primary hover:bg-transparent dark:hover:bg-gray-800/30 hover:bg-portfolio-primary/10 dark:text-portfolio-primary dark:border-portfolio-primary dark:bg-transparent"
               onClick={showMoreProjects}
             >
               Load More Cases

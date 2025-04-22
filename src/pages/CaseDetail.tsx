@@ -55,14 +55,14 @@ const CaseDetail = () => {
             {project.tags.map((tag, index) => (
               <span 
                 key={index}
-                className="px-3 py-1 bg-portfolio-secondary text-portfolio-primary text-sm rounded-full"
+                className="px-3 py-1 bg-portfolio-secondary/80 dark:bg-gray-800/70 text-portfolio-primary dark:text-portfolio-primary text-sm rounded-full"
               >
                 {tag}
               </span>
             ))}
           </div>
           
-          <div className="prose prose-lg max-w-none">
+          <div className="prose prose-lg max-w-none dark:prose-invert">
             <p className="text-lg text-muted-foreground mb-8">
               {project.description}
             </p>
