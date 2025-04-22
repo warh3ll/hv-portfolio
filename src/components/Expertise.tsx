@@ -20,7 +20,7 @@ const Expertise = () => {
   return (
     <section id="expertise" className="section bg-white dark:bg-gray-850">
       <div className="container">
-        <h2 className="section-title dark:text-white">My Expertise</h2>
+        <h2 className="section-title dark:text-white">Expertise</h2>
         <p className="text-center text-muted-foreground max-w-2xl mx-auto mb-12 dark:text-gray-300">
           {expertiseContent.description}
         </p>
