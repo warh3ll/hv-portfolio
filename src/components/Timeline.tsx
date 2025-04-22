@@ -12,21 +12,58 @@ import { cn } from '@/lib/utils';
 import { timelineData, TimelineItemProps, sectionDescriptions } from '@/data/content';
 import { useIsMobile } from '@/hooks/use-mobile';
 
+// Color scheme mapping for different timeline types
+const typeColorScheme = {
+  'job': {
+    background: 'bg-[#D3E4FD]',
+    text: 'text-blue-600',
+    iconBackground: 'bg-blue-100',
+    borderColor: 'border-blue-300',
+    tagBackground: 'bg-blue-100',
+    tagText: 'text-blue-600'
+  },
+  'freelance': {
+    background: 'bg-[#FDE1D3]',
+    text: 'text-orange-600',
+    iconBackground: 'bg-orange-100',
+    borderColor: 'border-orange-300',
+    tagBackground: 'bg-orange-100',
+    tagText: 'text-orange-600'
+  },
+  'education': {
+    background: 'bg-[#E5DEFF]',
+    text: 'text-purple-600',
+    iconBackground: 'bg-purple-100',
+    borderColor: 'border-purple-300',
+    tagBackground: 'bg-purple-100',
+    tagText: 'text-purple-600'
+  },
+  'personal project': {
+    background: 'bg-[#F2FCE2]',
+    text: 'text-green-600',
+    iconBackground: 'bg-green-100',
+    borderColor: 'border-green-300',
+    tagBackground: 'bg-green-100',
+    tagText: 'text-green-600'
+  }
+};
+
 const TimelineItem = ({ item, isLast }: { item: TimelineItemProps, isLast: boolean }) => {
   const isMobile = useIsMobile();
+  const colorScheme = typeColorScheme[item.type as keyof typeof typeColorScheme] || typeColorScheme.job;
   
   const getIconByType = (type: string) => {
     switch(type) {
       case 'job':
-        return <Briefcase className="h-6 w-6" />;
+        return <Briefcase className={`h-6 w-6 ${colorScheme.text}`} />;
       case 'freelance':
-        return <Clock className="h-6 w-6" />;
+        return <Clock className={`h-6 w-6 ${colorScheme.text}`} />;
       case 'education':
-        return <CalendarDays className="h-6 w-6" />;
+        return <CalendarDays className={`h-6 w-6 ${colorScheme.text}`} />;
       case 'personal project':
-        return <Rocket className="h-6 w-6" />;
+        return <Rocket className={`h-6 w-6 ${colorScheme.text}`} />;
       default:
-        return <Briefcase className="h-6 w-6" />;
+        return <Briefcase className={`h-6 w-6 ${colorScheme.text}`} />;
     }
   };
 
@@ -42,15 +79,18 @@ const TimelineItem = ({ item, isLast }: { item: TimelineItemProps, isLast: boole
       )}>
         {!isMobile && (
           <div className={cn(
-            "h-16 w-0.5 bg-portfolio-primary/20",
+            `h-16 w-0.5 ${colorScheme.borderColor}`,
             {"opacity-0": item.id === 1}
           )} />
         )}
-        <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-portfolio-primary/10 text-portfolio-primary z-10">
+        <div className={cn(
+          "flex h-16 w-16 shrink-0 items-center justify-center rounded-full z-10",
+          colorScheme.iconBackground
+        )}>
           {getIconByType(item.type)}
         </div>
         {!isMobile && !isLast && (
-          <div className="h-full w-0.5 bg-portfolio-primary/20" />
+          <div className={cn(`h-full w-0.5 ${colorScheme.borderColor}`)} />
         )}
       </div>
 
@@ -60,23 +100,34 @@ const TimelineItem = ({ item, isLast }: { item: TimelineItemProps, isLast: boole
         "pb-10",
         isMobile ? "" : "pt-3"
       )}>
-        <Card className="w-full hover:shadow-lg transition-shadow duration-300">
-          <CardContent className="p-6">
+        <Card className={cn(
+          "w-full hover:shadow-lg transition-shadow duration-300 border", 
+          colorScheme.borderColor
+        )}>
+          <CardContent className={cn("p-6", colorScheme.background)}>
             <div className="mb-2">
-              <span className="inline-block px-3 py-1 text-sm font-medium rounded-full bg-portfolio-primary/10 text-portfolio-primary">
+              <span className={cn(
+                "inline-block px-3 py-1 text-sm font-medium rounded-full",
+                colorScheme.tagBackground,
+                colorScheme.tagText
+              )}>
                 {item.year}
               </span>
             </div>
             <h3 className="text-xl font-bold">{item.title}</h3>
             <p className="text-muted-foreground">{item.company}</p>
-            <Separator className="my-3" />
+            <Separator className={cn("my-3", colorScheme.borderColor)} />
             <p className="mt-2">{item.description}</p>
             {item.tags && (
               <div className="mt-3 flex flex-wrap gap-2">
                 {item.tags.map((tag, idx) => (
                   <span 
                     key={idx} 
-                    className="text-xs px-2 py-1 rounded-md bg-secondary text-secondary-foreground"
+                    className={cn(
+                      "text-xs px-2 py-1 rounded-md",
+                      colorScheme.tagBackground,
+                      colorScheme.tagText
+                    )}
                   >
                     {tag}
                   </span>
