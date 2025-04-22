@@ -55,20 +55,7 @@ const Header = () => {
           >
             About
           </button>
-          <button 
-            onClick={() => scrollToSection('contact')}
-            className="text-foreground hover:text-portfolio-primary transition-colors"
-          >
-            Contact
-          </button>
         </nav>
-
-        <Button 
-          onClick={() => scrollToSection('contact')}
-          className="hidden md:inline-flex bg-portfolio-primary hover:bg-portfolio-primary/80 text-white"
-        >
-          Get in Touch
-        </Button>
 
         {/* Mobile Menu Button */}
         <button 
@@ -96,18 +83,6 @@ const Header = () => {
             >
               About
             </button>
-            <button 
-              onClick={() => scrollToSection('contact')}
-              className="py-2 text-foreground hover:text-portfolio-primary transition-colors"
-            >
-              Contact
-            </button>
-            <Button 
-              onClick={() => scrollToSection('contact')}
-              className="w-full bg-portfolio-primary hover:bg-portfolio-primary/80 text-white"
-            >
-              Get in Touch
-            </Button>
           </div>
         </div>
       )}
