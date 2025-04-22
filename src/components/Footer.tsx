@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Github, Linkedin, Twitter, Instagram, ChevronUp } from 'lucide-react';
 import { Button } from './ui/button';
@@ -26,7 +27,7 @@ const Footer = () => {
         
         <div className="mt-8 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center">
           <p>&copy; {year} Henrik Vårhäll. All rights reserved.</p>
-          <Button onClick={scrollToTop} variant="outline" size="default" aria-label="Back to top" className="border-white/40 mt-4 md:mt-0 flex items-center gap-2 text-slate-50 bg-white/0 text-sm">
+          <Button onClick={scrollToTop} variant="outline" size="default" aria-label="Back to top" className="border-white/40 mt-4 md:mt-0 flex items-center gap-2 text-slate-50 bg-white/5 hover:bg-white/10 transition-colors text-sm">
             <span>Back to top</span>
             <ChevronUp className="h-5 w-5" />
           </Button>
