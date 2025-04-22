@@ -10,8 +10,8 @@ const Footer = () => {
       <div className="container">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-6 md:mb-0">
-            <h3 className="text-2xl font-bold mb-2">Portfolio</h3>
-            <p className="text-white/70">Creating beautiful digital experiences</p>
+            <h3 className="text-2xl font-bold mb-2">Glad you came this far!</h3>
+            <p className="text-white/70">If you want to get in touch, please message me through LinkedIn.</p>
           </div>
           
           <div className="flex space-x-4">
