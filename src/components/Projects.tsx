@@ -25,9 +25,9 @@ const Projects = () => {
   };
 
   return (
-    <section id="projects" className="section bg-white">
+    <section id="projects" className="section bg-white dark:bg-gray-900">
       <div className="container">
-        <h2 className="section-title">Case</h2>
+        <h2 className="section-title dark:text-white">Case</h2>
         
         <p className="text-center text-muted-foreground max-w-2xl mx-auto mb-12">
           {sectionDescriptions.projects}
@@ -40,7 +40,7 @@ const Projects = () => {
               variant={filter === filterName ? "default" : "outline"}
               className={filter === filterName 
                 ? "bg-portfolio-primary hover:bg-portfolio-primary/80" 
-                : "border-portfolio-primary text-portfolio-primary hover:bg-portfolio-primary/10"}
+                : "border-portfolio-primary text-portfolio-primary hover:bg-portfolio-primary/10 dark:text-portfolio-primary dark:border-portfolio-primary"}
               onClick={() => {
                 setFilter(filterName);
                 setVisibleProjects(4);
@@ -66,7 +66,7 @@ const Projects = () => {
             <Button 
               variant="outline" 
               size="lg"
-              className="border-portfolio-primary text-portfolio-primary hover:bg-portfolio-primary/10"
+              className="border-portfolio-primary text-portfolio-primary hover:bg-portfolio-primary/10 dark:text-portfolio-primary dark:border-portfolio-primary"
               onClick={showMoreProjects}
             >
               Load More Cases

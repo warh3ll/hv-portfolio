@@ -1,3 +1,4 @@
+
 import React from 'react'
 import { Clock, Briefcase, Atom, Rocket } from 'lucide-react'
 import { Card, CardContent } from '@/components/ui/card'
@@ -14,19 +15,19 @@ import { useIsMobile } from '@/hooks/use-mobile'
 const typeIconColorScheme = {
   job: {
     iconColor: 'text-red-600',
-    iconBackground: 'bg-red-100',
+    iconBackground: 'bg-red-100 dark:bg-red-900/30',
   },
   freelance: {
     iconColor: 'text-orange-600',
-    iconBackground: 'bg-orange-100',
+    iconBackground: 'bg-orange-100 dark:bg-orange-900/30',
   },
   education: {
     iconColor: 'text-purple-600',
-    iconBackground: 'bg-purple-100',
+    iconBackground: 'bg-purple-100 dark:bg-purple-900/30',
   },
   'personal project': {
     iconColor: 'text-green-600',
-    iconBackground: 'bg-green-100',
+    iconBackground: 'bg-green-100 dark:bg-green-900/30',
   },
 }
 
@@ -96,10 +97,10 @@ const TimelineItem = ({
           isMobile ? '' : 'pt-3'
         )}
       >
-        <Card className="w-full hover:shadow-lg transition-shadow duration-300">
+        <Card className="w-full hover:shadow-lg transition-shadow duration-300 dark:bg-gray-800">
           <CardContent className="p-6">
             <div className="mb-2">
-              <span className="inline-block px-3 py-1 text-sm font-medium rounded-full bg-portfolio-primary/10 text-portfolio-primary">
+              <span className="inline-block px-3 py-1 text-sm font-medium rounded-full bg-portfolio-primary/10 text-portfolio-primary dark:bg-portfolio-primary/20">
                 {item.year}
               </span>
             </div>
@@ -112,7 +113,7 @@ const TimelineItem = ({
                 {item.tags.map((tag, idx) => (
                   <span
                     key={idx}
-                    className="text-xs px-2 py-1 rounded-md bg-secondary text-secondary-foreground"
+                    className="text-xs px-2 py-1 rounded-md bg-secondary text-secondary-foreground dark:bg-gray-700 dark:text-gray-200"
                   >
                     {tag}
                   </span>
@@ -130,10 +131,10 @@ const Timeline = () => {
   const isMobile = useIsMobile()
 
   return (
-    <section id="timeline" className="section bg-gray-100">
+    <section id="timeline" className="section bg-gray-100 dark:bg-gray-800">
       <div className="container">
-        <h2 className="section-title">My Experience</h2>
-        <p className="text-center text-muted-foreground max-w-2xl mx-auto mb-16">
+        <h2 className="section-title dark:text-white">My Experience</h2>
+        <p className="text-center text-muted-foreground max-w-2xl mx-auto mb-16 dark:text-gray-300">
           {sectionDescriptions.timeline}
         </p>
 

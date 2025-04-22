@@ -16,7 +16,7 @@ const Hero = () => {
   return (
     <section 
       id="hero" 
-      className="min-h-screen flex items-center bg-gradient-to-br from-white to-portfolio-secondary pt-20"
+      className="min-h-screen flex items-center bg-gradient-to-br from-white to-portfolio-secondary dark:from-gray-900 dark:to-gray-800 pt-20"
     >
       <div className="container mx-auto">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
@@ -46,11 +46,11 @@ const Hero = () => {
           
           <div className="lg:w-1/2">
             <div className="relative">
-              <div className="bg-portfolio-primary/10 rounded-full w-[450px] h-[450px] max-w-full mx-auto"></div>
+              <div className="bg-portfolio-primary/10 dark:bg-portfolio-primary/5 rounded-full w-[450px] h-[450px] max-w-full mx-auto"></div>
               <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-[400px] h-[400px] max-w-[90%] rounded-full bg-portfolio-primary/20 flex items-center justify-center">
+                <div className="w-[400px] h-[400px] max-w-[90%] rounded-full bg-portfolio-primary/20 dark:bg-portfolio-primary/10 flex items-center justify-center">
                   {/* Profile image */}
-                  <div className="w-[350px] h-[350px] max-w-[90%] rounded-full bg-portfolio-primary/30 flex items-center justify-center text-portfolio-primary overflow-hidden">
+                  <div className="w-[350px] h-[350px] max-w-[90%] rounded-full bg-portfolio-primary/30 dark:bg-portfolio-primary/20 flex items-center justify-center text-portfolio-primary overflow-hidden">
                     {heroContent.profileImage ? (
                       <img 
                         src={heroContent.profileImage} 
@@ -75,7 +75,7 @@ const Hero = () => {
         <div className="mt-16 sm:mt-24 flex justify-center">
           <button 
             onClick={scrollToProjects}
-            className="p-3 rounded-full bg-white shadow-md text-portfolio-primary hover:bg-portfolio-primary hover:text-white transition-colors duration-300"
+            className="p-3 rounded-full bg-white dark:bg-gray-800 shadow-md text-portfolio-primary hover:bg-portfolio-primary hover:text-white dark:hover:text-white transition-colors duration-300"
             aria-label="Scroll down"
           >
             <ArrowDown size={24} />
