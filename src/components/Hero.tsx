@@ -21,7 +21,7 @@ const Hero = () => {
       <div className="container mx-auto">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
           <div className="lg:w-1/2 space-y-8 text-center lg:text-left">
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight leading-normal">
+            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight leading-relaxed">
               <span className="text-portfolio-primary block mb-2">{heroContent.title.highlight}</span>
               <span className="block mb-2">{heroContent.title.line1}</span>
               <span className="block">{heroContent.title.line2}</span>
