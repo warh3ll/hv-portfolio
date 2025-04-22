@@ -18,33 +18,24 @@ const iconMap: Record<string, React.ComponentType<any>> = {
 
 const Expertise = () => {
   return (
-    <section id="expertise" className="section bg-white dark:bg-gray-850">
+    <section id="expertise" className="section py-12 bg-white dark:bg-gray-850">
       <div className="container">
-        <h2 className="section-title dark:text-white">Expertise</h2>
-        <p className="text-center text-muted-foreground max-w-2xl mx-auto mb-12 dark:text-gray-300">
-          {expertiseContent.description}
-        </p>
-
-        <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8 max-w-4xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {expertiseContent.skills.map((skill, index) => {
-              const IconComponent = iconMap[skill.icon];
-              
-              return (
-                <div key={index} className="flex">
-                  <div className="mr-4 mt-1">
-                    <div className="p-3 bg-portfolio-primary/10 dark:bg-portfolio-primary/20 rounded-full text-portfolio-primary">
-                      {IconComponent && <IconComponent size={24} />}
-                    </div>
-                  </div>
-                  <div>
-                    <h4 className="font-bold mb-2 dark:text-white">{skill.name}</h4>
-                    <p className="text-muted-foreground dark:text-gray-300">{skill.description}</p>
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-5">
+          {expertiseContent.skills.slice(0, 6).map((skill, index) => {
+            const IconComponent = iconMap[skill.icon];
+            
+            return (
+              <div key={index} className="flex flex-col items-center text-center p-4 rounded-lg bg-white dark:bg-gray-800 shadow-sm hover:shadow-md transition-shadow duration-300">
+                <div className="mb-3">
+                  <div className="p-3 bg-portfolio-primary/10 dark:bg-portfolio-primary/20 rounded-full text-portfolio-primary">
+                    {IconComponent && <IconComponent size={28} />}
                   </div>
                 </div>
-              );
-            })}
-          </div>
+                <h4 className="font-bold text-lg mb-1 dark:text-white">{skill.name}</h4>
+                <p className="text-sm text-muted-foreground dark:text-gray-300">{skill.description}</p>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>
