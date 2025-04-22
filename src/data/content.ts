@@ -255,7 +255,6 @@ export const aboutContent = {
     "I’ve had a curious mind and always enjoyed the sense of discovery and trying to understand why things are how they are. At one point my brother told me about interaction design, and that it might be interesting for me to read more about. I was 20 years old and had no idea what it was, but I did read up on it and I thought, this is it! But there was also a part of me that really wanted to work with video games. But I couldn’t program and I wasn’t good enough to be a 3D artist (you had to perform a test to get accepted so there was no point) and so I had to let that go.",
     "So I fixed some of my bad grades during an extra year of school (komvux in Sweden) so that I could get accepted. In the end of that year I applied to 7 programs similar to each other in interaction design and got accepted into all my top three ones! So I could pick and choose, and the choice fell on Linnaeus University (or Högskolan i Kalmar as it was called when I started).",
     "Had some great years there, and learned a lot of things that set a good basis for getting into design work! It was here that I got particularly interested in the design craft, perception and psychology."
-  ],
   ]
 };
 
