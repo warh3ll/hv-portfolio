@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { aboutContent } from '@/data/content';
-import PersonalImageCarousel from './PersonalImageCarousel';
+import PersonalImageGallery from './PersonalImageGallery';
 
 const About = () => {
   return (
@@ -11,9 +11,9 @@ const About = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="order-2 lg:order-1">
-            {/* Personal Image Carousel */}
+            {/* Personal Image Gallery */}
             <div>
-              <PersonalImageCarousel />
+              <PersonalImageGallery />
             </div>
           </div>
           
