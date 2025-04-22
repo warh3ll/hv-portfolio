@@ -1,3 +1,4 @@
+
 import React from 'react'
 import { Clock, Briefcase, Atom, Rocket } from 'lucide-react'
 import { Card, CardContent } from '@/components/ui/card'
@@ -24,7 +25,7 @@ const typeIconColorScheme = {
     iconColor: 'text-purple-600',
     iconBackground: 'bg-purple-100',
   },
-  personalproject: {
+  'personal project': {
     iconColor: 'text-green-600',
     iconBackground: 'bg-green-100',
   },
@@ -50,7 +51,7 @@ const TimelineItem = ({
         return <Clock className={`h-6 w-6 ${colorScheme.iconColor}`} />
       case 'education':
         return <Atom className={`h-6 w-6 ${colorScheme.iconColor}`} />
-      case 'personalproject':
+      case 'personal project':
         return <Rocket className={`h-6 w-6 ${colorScheme.iconColor}`} />
       default:
         return <Briefcase className={`h-6 w-6 ${colorScheme.iconColor}`} />
