@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -20,13 +19,8 @@ export default {
 		},
 		extend: {
 			fontFamily: {
-				// Add your custom font families here
-				// Example:
-				// 'sans': ['Inter', 'sans-serif'],
-				// 'serif': ['Merriweather', 'serif'],
-				// 'mono': ['Fira Code', 'monospace'],
-				// 'display': ['Poppins', 'sans-serif'],
-				// You can use them like: className="font-display"
+				sans: ['Figtree', 'sans-serif'],
+				// Additional font family configurations can be added here if needed
 			},
 			colors: {
 				border: 'hsl(var(--border))',
