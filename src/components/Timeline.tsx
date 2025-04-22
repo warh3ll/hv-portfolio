@@ -13,8 +13,8 @@ import { useIsMobile } from '@/hooks/use-mobile'
 // Icon color scheme mapping for different timeline types
 const typeIconColorScheme = {
   job: {
-    iconColor: 'text-blue-600',
-    iconBackground: 'bg-blue-100',
+    iconColor: 'text-red-600',
+    iconBackground: 'bg-red-100',
   },
   freelance: {
     iconColor: 'text-orange-600',
@@ -24,7 +24,7 @@ const typeIconColorScheme = {
     iconColor: 'text-purple-600',
     iconBackground: 'bg-purple-100',
   },
-  'personal project': {
+  personalproject: {
     iconColor: 'text-green-600',
     iconBackground: 'bg-green-100',
   },
@@ -50,7 +50,7 @@ const TimelineItem = ({
         return <Clock className={`h-6 w-6 ${colorScheme.iconColor}`} />
       case 'education':
         return <Atom className={`h-6 w-6 ${colorScheme.iconColor}`} />
-      case 'personal project':
+      case 'personalproject':
         return <Rocket className={`h-6 w-6 ${colorScheme.iconColor}`} />
       default:
         return <Briefcase className={`h-6 w-6 ${colorScheme.iconColor}`} />
