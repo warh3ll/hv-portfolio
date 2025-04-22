@@ -1,6 +1,6 @@
 
 // Section descriptions
 export const sectionDescriptions = {
-  projects: "A showcase of my recent design projects spanning various industries and platforms.",
-  timeline: "A chronological journey through my professional career, showcasing key positions and projects that have shaped my expertise as a designer."
+  projects: "Here are a few of the key projects and products I've worked on.",
+  timeline: "Follow my journey from junior designer all the way to today."
 };
