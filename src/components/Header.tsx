@@ -44,9 +44,9 @@ const Header = () => {
         <nav className="hidden md:flex space-x-8">
           <button
             onClick={() => scrollToSection('projects')}
-            className="text-foreground hover:text-portfolio-primary transition-colors"
+            className="text-foreground hover:text-portfolio-primary transition-colors text-weight: 600"
           >
-            Projects
+            Case
           </button>
           <button
             onClick={() => scrollToSection('timeline')}
