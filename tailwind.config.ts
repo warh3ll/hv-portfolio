@@ -21,6 +21,7 @@ export default {
 		extend: {
 			fontFamily: {
 				sans: ['Figtree', 'sans-serif'],
+				handwriting: ['"Caveat"', 'cursive'],
 				// Additional font family configurations can be added here if needed
 			},
 			colors: {

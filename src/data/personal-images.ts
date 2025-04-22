@@ -1,24 +1,24 @@
 
-// Personal images for carousel
+// Personal images for display
 export const personalImages = [
   {
-    src: "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?auto=format&fit=crop&w=800&q=80",
-    alt: "Enjoying nature with family",
-    caption: "Weekend hiking trip"
+    src: "/lovable-uploads/0baf3637-5494-4717-8160-f895df649c72.png",
+    alt: "Beautiful sunset over a city skyline",
+    caption: "Sunset view from my apartment"
   },
   {
-    src: "https://images.unsplash.com/photo-1721322800607-8c38375eef04?auto=format&fit=crop&w=800&q=80",
-    alt: "My home workspace",
-    caption: "Where the magic happens"
+    src: "/lovable-uploads/387312f6-ffdf-4180-954b-68ea4d90759e.png",
+    alt: "Disc golf course in a forest",
+    caption: "Hole 18 at my favorite disc golf course"
   },
   {
-    src: "https://images.unsplash.com/photo-1582562124811-c09040d0a901?auto=format&fit=crop&w=800&q=80",
-    alt: "My cat helping with design work",
-    caption: "My feline design assistant"
+    src: "/lovable-uploads/2a1ec993-47bf-43f8-9d2a-788ace6c037c.png",
+    alt: "Selfie with my son on a park bench",
+    caption: "Park day with my son"
   },
   {
-    src: "https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&w=800&q=80",
-    alt: "Travel photography from my last trip",
-    caption: "Exploring new places"
+    src: "/lovable-uploads/197c9423-3eba-40ce-ad61-9a18ad36e81b.png",
+    alt: "Selfie with disc golf basket and blue disc",
+    caption: "Got my new Latitude 64 Fuse disc!"
   }
 ];
