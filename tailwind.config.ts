@@ -19,6 +19,15 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				// Add your custom font families here
+				// Example:
+				// 'sans': ['Inter', 'sans-serif'],
+				// 'serif': ['Merriweather', 'serif'],
+				// 'mono': ['Fira Code', 'monospace'],
+				// 'display': ['Poppins', 'sans-serif'],
+				// You can use them like: className="font-display"
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
