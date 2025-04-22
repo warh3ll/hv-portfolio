@@ -1,16 +1,10 @@
 
 import React from 'react';
 import { personalImages } from '@/data/personal-images';
-import { Images } from 'lucide-react';
 
 const PersonalImageGallery = () => {
   return (
-    <div className="w-full max-w-4xl mx-auto mt-8 mb-16">
-      <div className="flex items-center gap-2 mb-6 justify-center">
-        <Images className="h-5 w-5" />
-        <h3 className="text-xl font-bold text-center">Personal Moments</h3>
-      </div>
-      
+    <div className="w-full max-w-4xl mx-auto mt-8 mb-16">      
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {personalImages.map((image, index) => (
           <div 
