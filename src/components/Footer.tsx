@@ -1,20 +1,15 @@
-
 import React from 'react';
 import { Github, Linkedin, Twitter, Instagram, ChevronUp } from 'lucide-react';
 import { Button } from './ui/button';
-
 const Footer = () => {
   const year = new Date().getFullYear();
-  
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
       behavior: 'smooth'
     });
   };
-  
-  return (
-    <footer className="bg-portfolio-dark text-white py-12 relative">
+  return <footer className="bg-portfolio-dark text-white py-12 relative">
       <div className="container">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-6 md:mb-0">
@@ -23,13 +18,7 @@ const Footer = () => {
           </div>
           
           <div className="flex space-x-4">
-            <a 
-              href="https://www.linkedin.com/in/henrikvarhall/" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="p-3 bg-white/10 rounded-full hover:bg-white/20 transition-colors"
-              aria-label="LinkedIn"
-            >
+            <a href="https://www.linkedin.com/in/henrikvarhall/" target="_blank" rel="noopener noreferrer" className="p-3 bg-white/10 rounded-full hover:bg-white/20 transition-colors" aria-label="LinkedIn">
               <Linkedin size={20} />
             </a>
           </div>
@@ -37,20 +26,12 @@ const Footer = () => {
         
         <div className="mt-8 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center">
           <p>&copy; {year} Henrik Vårhäll. All rights reserved.</p>
-          <Button 
-            onClick={scrollToTop} 
-            variant="outline" 
-            size="default" 
-            className="bg-white/20 text-white border-white/40 hover:bg-white/30 hover:text-white mt-4 md:mt-0 flex items-center gap-2"
-            aria-label="Back to top"
-          >
+          <Button onClick={scrollToTop} variant="outline" size="default" aria-label="Back to top" className="border-white/40 mt-4 md:mt-0 flex items-center gap-2 text-slate-50 bg-white/0 text-sm">
             <span>Back to top</span>
             <ChevronUp className="h-5 w-5" />
           </Button>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default Footer;
