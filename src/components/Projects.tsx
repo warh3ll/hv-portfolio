@@ -1,5 +1,6 @@
 
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import ProjectCard from './ProjectCard';
 import { Button } from '@/components/ui/button';
 import { projectsData, sectionDescriptions } from '@/data/content';
@@ -7,6 +8,7 @@ import { projectsData, sectionDescriptions } from '@/data/content';
 const Projects = () => {
   const [visibleProjects, setVisibleProjects] = useState(4);
   const [filter, setFilter] = useState('All');
+  const navigate = useNavigate();
   
   const filters = ['All', 'Mobile', 'Web', 'Dashboard', 'UX Research', 'UI Design'];
   
@@ -18,10 +20,14 @@ const Projects = () => {
     setVisibleProjects(prev => Math.min(prev + 4, filteredProjects.length));
   };
 
+  const handleProjectClick = (projectId: number) => {
+    navigate(`/case/${projectId}`);
+  };
+
   return (
     <section id="projects" className="section bg-white">
       <div className="container">
-        <h2 className="section-title">My Projects</h2>
+        <h2 className="section-title">Case</h2>
         
         <p className="text-center text-muted-foreground max-w-2xl mx-auto mb-12">
           {sectionDescriptions.projects}
@@ -47,7 +53,11 @@ const Projects = () => {
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredProjects.slice(0, visibleProjects).map(project => (
-            <ProjectCard key={project.id} {...project} />
+            <ProjectCard 
+              key={project.id} 
+              {...project} 
+              onClick={() => handleProjectClick(project.id)} 
+            />
           ))}
         </div>
         
@@ -59,7 +69,7 @@ const Projects = () => {
               className="border-portfolio-primary text-portfolio-primary hover:bg-portfolio-primary/10"
               onClick={showMoreProjects}
             >
-              Load More Projects
+              Load More Cases
             </Button>
           </div>
         )}

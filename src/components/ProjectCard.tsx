@@ -11,6 +11,7 @@ export interface ProjectProps {
   image: string;
   tags: string[];
   featured?: boolean;
+  onClick?: () => void;
 }
 
 const ProjectCard: React.FC<ProjectProps> = ({
@@ -19,13 +20,15 @@ const ProjectCard: React.FC<ProjectProps> = ({
   image,
   tags,
   featured = false,
+  onClick,
 }) => {
   return (
     <div 
       className={cn(
-        "group card overflow-hidden transition-all duration-300",
+        "group card overflow-hidden transition-all duration-300 cursor-pointer",
         featured ? "col-span-full md:col-span-2 md:row-span-2" : ""
       )}
+      onClick={onClick}
     >
       <div className="relative overflow-hidden aspect-video">
         <div 
@@ -35,7 +38,7 @@ const ProjectCard: React.FC<ProjectProps> = ({
         <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
           <Button className="bg-portfolio-primary hover:bg-portfolio-primary/80 text-white">
             <Eye className="mr-2 h-4 w-4" />
-            View Project
+            View Case
           </Button>
         </div>
       </div>
