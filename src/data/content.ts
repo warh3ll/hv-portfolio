@@ -1,4 +1,3 @@
-
 // This file serves as a simple CMS for the portfolio site
 // All content is centralized here for easy management
 
@@ -183,7 +182,7 @@ export const heroContent = {
     line2: "Experiences",
   },
   description: "I've been a designer in the field since 2012, mostly as a full-stack UX Designer. I'm experienced, and love, everything from everyday design work in Figma to lead roles with a particular interest in design systems, value creation, user needs analysis, product ecosystems and design processes.",
-  profileImage: "" // You can add a URL to your profile image here
+  profileImage: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
 };
 
 // About section content
