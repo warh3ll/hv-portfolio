@@ -22,13 +22,13 @@ const Hero = () => {
             <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight">
               <span className="text-portfolio-primary">UX/UI Designer</span>
               <br />
-              <span>Creating Meaningful</span>
+              <span>Making Impactful</span>
               <br />
               <span>Experiences</span>
             </h1>
             
             <p className="text-lg sm:text-xl text-muted-foreground max-w-xl mx-auto lg:mx-0">
-              I’m a designer working in the field since 2012, mostly as a full-stack UX Designer, but in the last few years I’ve moved more towards lead roles with a particular interest in design systems, value creation, user needs analysis, product ecosystems and design processes.
+              I’ve been a designer in the field since 2012, mostly as a full-stack UX Designer. I'm experienced, and love, everything from everyday design work in Figma to lead roles with a particular interest in design systems, value creation, user needs analysis, product ecosystems and design processes.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
