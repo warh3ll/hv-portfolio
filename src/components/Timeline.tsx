@@ -11,6 +11,7 @@ import {
 } from '@/data/content'
 import { useIsMobile } from '@/hooks/use-mobile'
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible'
+import { Button } from '@/components/ui/button'
 
 // Icon color scheme mapping for different timeline types
 const typeIconColorScheme = {
@@ -121,12 +122,17 @@ const TimelineItem = ({
                     <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-white dark:from-gray-800 to-transparent" />
                   )}
                   
-                  <CollapsibleTrigger className="w-full flex justify-center items-center mt-2 pt-2 text-sm text-portfolio-primary">
-                    <div className="flex items-center">
+                  <Button 
+                    variant="ghost" 
+                    size="sm"
+                    onClick={() => setIsOpen(!isOpen)}
+                    className="w-full mt-2 border border-gray-200 dark:border-gray-700 text-portfolio-primary hover:bg-gray-100 dark:hover:bg-gray-700"
+                  >
+                    <span className="flex items-center justify-center w-full">
                       {isOpen ? 'Show less' : 'Read more'}
                       <ChevronDown className={`ml-1 h-4 w-4 transition-transform ${isOpen ? 'rotate-180' : ''}`} />
-                    </div>
-                  </CollapsibleTrigger>
+                    </span>
+                  </Button>
                 </div>
               </Collapsible>
             ) : (
