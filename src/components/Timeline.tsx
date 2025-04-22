@@ -1,6 +1,6 @@
 
-import React from 'react'
-import { Clock, Briefcase, Atom, Rocket } from 'lucide-react'
+import React, { useState } from 'react'
+import { Clock, Briefcase, Atom, Rocket, ChevronDown } from 'lucide-react'
 import { Card, CardContent } from '@/components/ui/card'
 import { Separator } from '@/components/ui/separator'
 import { cn } from '@/lib/utils'
@@ -10,6 +10,7 @@ import {
   sectionDescriptions,
 } from '@/data/content'
 import { useIsMobile } from '@/hooks/use-mobile'
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible'
 
 // Icon color scheme mapping for different timeline types
 const typeIconColorScheme = {
@@ -39,6 +40,7 @@ const TimelineItem = ({
   isLast: boolean
 }) => {
   const isMobile = useIsMobile()
+  const [isOpen, setIsOpen] = useState(false)
   const colorScheme =
     typeIconColorScheme[item.type as keyof typeof typeIconColorScheme] ||
     typeIconColorScheme.job
@@ -107,7 +109,30 @@ const TimelineItem = ({
             <h3 className="text-xl font-bold">{item.title}</h3>
             <p className="text-muted-foreground">{item.company}</p>
             <Separator className="my-3" />
-            <p className="mt-2">{item.description}</p>
+            
+            {isMobile ? (
+              <Collapsible open={isOpen} onOpenChange={setIsOpen}>
+                <div className="relative">
+                  <CollapsibleContent forceMount className={!isOpen ? "max-h-24 overflow-hidden" : ""}>
+                    <p className="mt-2">{item.description}</p>
+                  </CollapsibleContent>
+                  
+                  {!isOpen && (
+                    <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-white dark:from-gray-800 to-transparent" />
+                  )}
+                  
+                  <CollapsibleTrigger className="w-full flex justify-center items-center mt-2 pt-2 text-sm text-portfolio-primary">
+                    <div className="flex items-center">
+                      {isOpen ? 'Show less' : 'Read more'}
+                      <ChevronDown className={`ml-1 h-4 w-4 transition-transform ${isOpen ? 'rotate-180' : ''}`} />
+                    </div>
+                  </CollapsibleTrigger>
+                </div>
+              </Collapsible>
+            ) : (
+              <p className="mt-2">{item.description}</p>
+            )}
+            
             {item.tags && (
               <div className="mt-3 flex flex-wrap gap-2">
                 {item.tags.map((tag, idx) => (
