@@ -1,76 +1,86 @@
-
-import React from 'react';
-import { 
-  Clock,
-  Briefcase,
-  CalendarDays,
-  Rocket
-} from 'lucide-react';
-import { Card, CardContent } from '@/components/ui/card';
-import { Separator } from '@/components/ui/separator';
-import { cn } from '@/lib/utils';
-import { timelineData, TimelineItemProps, sectionDescriptions } from '@/data/content';
-import { useIsMobile } from '@/hooks/use-mobile';
+import React from 'react'
+import { Clock, Briefcase, Atom, Rocket } from 'lucide-react'
+import { Card, CardContent } from '@/components/ui/card'
+import { Separator } from '@/components/ui/separator'
+import { cn } from '@/lib/utils'
+import {
+  timelineData,
+  TimelineItemProps,
+  sectionDescriptions,
+} from '@/data/content'
+import { useIsMobile } from '@/hooks/use-mobile'
 
 // Icon color scheme mapping for different timeline types
 const typeIconColorScheme = {
-  'job': {
+  job: {
     iconColor: 'text-blue-600',
-    iconBackground: 'bg-blue-100'
+    iconBackground: 'bg-blue-100',
   },
-  'freelance': {
+  freelance: {
     iconColor: 'text-orange-600',
-    iconBackground: 'bg-orange-100'
+    iconBackground: 'bg-orange-100',
   },
-  'education': {
+  education: {
     iconColor: 'text-purple-600',
-    iconBackground: 'bg-purple-100'
+    iconBackground: 'bg-purple-100',
   },
   'personal project': {
     iconColor: 'text-green-600',
-    iconBackground: 'bg-green-100'
-  }
-};
+    iconBackground: 'bg-green-100',
+  },
+}
 
-const TimelineItem = ({ item, isLast }: { item: TimelineItemProps, isLast: boolean }) => {
-  const isMobile = useIsMobile();
-  const colorScheme = typeIconColorScheme[item.type as keyof typeof typeIconColorScheme] || typeIconColorScheme.job;
-  
+const TimelineItem = ({
+  item,
+  isLast,
+}: {
+  item: TimelineItemProps
+  isLast: boolean
+}) => {
+  const isMobile = useIsMobile()
+  const colorScheme =
+    typeIconColorScheme[item.type as keyof typeof typeIconColorScheme] ||
+    typeIconColorScheme.job
+
   const getIconByType = (type: string) => {
-    switch(type) {
+    switch (type) {
       case 'job':
-        return <Briefcase className={`h-6 w-6 ${colorScheme.iconColor}`} />;
+        return <Briefcase className={`h-6 w-6 ${colorScheme.iconColor}`} />
       case 'freelance':
-        return <Clock className={`h-6 w-6 ${colorScheme.iconColor}`} />;
+        return <Clock className={`h-6 w-6 ${colorScheme.iconColor}`} />
       case 'education':
-        return <CalendarDays className={`h-6 w-6 ${colorScheme.iconColor}`} />;
+        return <Atom className={`h-6 w-6 ${colorScheme.iconColor}`} />
       case 'personal project':
-        return <Rocket className={`h-6 w-6 ${colorScheme.iconColor}`} />;
+        return <Rocket className={`h-6 w-6 ${colorScheme.iconColor}`} />
       default:
-        return <Briefcase className={`h-6 w-6 ${colorScheme.iconColor}`} />;
+        return <Briefcase className={`h-6 w-6 ${colorScheme.iconColor}`} />
     }
-  };
+  }
 
   return (
-    <div className={cn(
-      "relative flex",
-      isMobile ? "flex-col" : "items-start"
-    )}>
+    <div className={cn('relative flex', isMobile ? 'flex-col' : 'items-start')}>
       {/* Timeline line and dot */}
-      <div className={cn(
-        "flex items-center",
-        isMobile ? "mb-4 justify-start" : "absolute left-0 top-0 bottom-0 flex-col"
-      )}>
-        {!isMobile && (
-          <div className={cn(
-            "h-16 w-0.5 bg-portfolio-primary/20",
-            {"opacity-0": item.id === 1}
-          )} />
+      <div
+        className={cn(
+          'flex items-center',
+          isMobile
+            ? 'mb-4 justify-start'
+            : 'absolute left-0 top-0 bottom-0 flex-col'
         )}
-        <div className={cn(
-          "flex h-16 w-16 shrink-0 items-center justify-center rounded-full z-10",
-          colorScheme.iconBackground
-        )}>
+      >
+        {!isMobile && (
+          <div
+            className={cn('h-16 w-0.5 bg-portfolio-primary/20', {
+              'opacity-0': item.id === 1,
+            })}
+          />
+        )}
+        <div
+          className={cn(
+            'flex h-16 w-16 shrink-0 items-center justify-center rounded-full z-10',
+            colorScheme.iconBackground
+          )}
+        >
           {getIconByType(item.type)}
         </div>
         {!isMobile && !isLast && (
@@ -79,11 +89,13 @@ const TimelineItem = ({ item, isLast }: { item: TimelineItemProps, isLast: boole
       </div>
 
       {/* Timeline content */}
-      <div className={cn(
-        isMobile ? "w-full" : "ml-24 w-full",
-        "pb-10",
-        isMobile ? "" : "pt-3"
-      )}>
+      <div
+        className={cn(
+          isMobile ? 'w-full' : 'ml-24 w-full',
+          'pb-10',
+          isMobile ? '' : 'pt-3'
+        )}
+      >
         <Card className="w-full hover:shadow-lg transition-shadow duration-300">
           <CardContent className="p-6">
             <div className="mb-2">
@@ -98,8 +110,8 @@ const TimelineItem = ({ item, isLast }: { item: TimelineItemProps, isLast: boole
             {item.tags && (
               <div className="mt-3 flex flex-wrap gap-2">
                 {item.tags.map((tag, idx) => (
-                  <span 
-                    key={idx} 
+                  <span
+                    key={idx}
                     className="text-xs px-2 py-1 rounded-md bg-secondary text-secondary-foreground"
                   >
                     {tag}
@@ -111,12 +123,12 @@ const TimelineItem = ({ item, isLast }: { item: TimelineItemProps, isLast: boole
         </Card>
       </div>
     </div>
-  );
-};
+  )
+}
 
 const Timeline = () => {
-  const isMobile = useIsMobile();
-  
+  const isMobile = useIsMobile()
+
   return (
     <section id="timeline" className="section bg-portfolio-secondary">
       <div className="container">
@@ -124,22 +136,24 @@ const Timeline = () => {
         <p className="text-center text-muted-foreground max-w-2xl mx-auto mb-16">
           {sectionDescriptions.timeline}
         </p>
-        
-        <div className={cn(
-          "relative mt-10 mx-auto",
-          isMobile ? "w-full" : "max-w-[800px]"
-        )}>
+
+        <div
+          className={cn(
+            'relative mt-10 mx-auto',
+            isMobile ? 'w-full' : 'max-w-[800px]'
+          )}
+        >
           {timelineData.map((item, index) => (
-            <TimelineItem 
-              key={item.id} 
-              item={item} 
-              isLast={index === timelineData.length - 1} 
+            <TimelineItem
+              key={item.id}
+              item={item}
+              isLast={index === timelineData.length - 1}
             />
           ))}
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Timeline;
+export default Timeline
