@@ -1,7 +1,7 @@
 
 // Expertise section content
 export const expertiseContent = {
-  description: "Specializing in user-centered design approaches with a focus on creating accessible, scalable, and cohesive product experiences.",
+  description: "My skillset revolves mainly around these pillars of design.",
   skills: [
     { 
       name: 'UX Design', 
