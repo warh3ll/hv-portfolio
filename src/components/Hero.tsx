@@ -39,7 +39,7 @@ const Hero = () => {
                 className="bg-portfolio-primary hover:bg-portfolio-primary/80 text-white"
                 onClick={scrollToProjects}
               >
-                View Projects
+                View Case
               </Button>
             </div>
           </div>
