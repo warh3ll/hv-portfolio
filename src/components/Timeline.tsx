@@ -130,7 +130,7 @@ const Timeline = () => {
   const isMobile = useIsMobile()
 
   return (
-    <section id="timeline" className="section bg-gray-300">
+    <section id="timeline" className="section bg-gray-100">
       <div className="container">
         <h2 className="section-title">My Experience</h2>
         <p className="text-center text-muted-foreground max-w-2xl mx-auto mb-16">
