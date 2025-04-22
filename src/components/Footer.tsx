@@ -1,12 +1,20 @@
 
 import React from 'react';
-import { Github, Linkedin, Twitter, Instagram } from 'lucide-react';
+import { Github, Linkedin, Twitter, Instagram, ChevronUp } from 'lucide-react';
+import { Button } from './ui/button';
 
 const Footer = () => {
   const year = new Date().getFullYear();
   
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  };
+  
   return (
-    <footer className="bg-portfolio-dark text-white py-12">
+    <footer className="bg-portfolio-dark text-white py-12 relative">
       <div className="container">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-6 md:mb-0">
@@ -29,6 +37,16 @@ const Footer = () => {
         
         <div className="mt-8 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center">
           <p>&copy; {year} Henrik Vårhäll. All rights reserved.</p>
+          <Button 
+            onClick={scrollToTop} 
+            variant="ghost" 
+            size="icon" 
+            className="text-white hover:bg-white/10 mt-4 md:mt-0"
+            aria-label="Back to top"
+          >
+            <ChevronUp className="h-5 w-5" />
+            <span className="sr-only">Back to top</span>
+          </Button>
         </div>
       </div>
     </footer>
