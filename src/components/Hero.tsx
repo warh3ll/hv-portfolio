@@ -2,6 +2,7 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowDown } from 'lucide-react';
+import { heroContent } from '@/data/content';
 
 const Hero = () => {
   const scrollToProjects = () => {
@@ -20,15 +21,15 @@ const Hero = () => {
         <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
           <div className="lg:w-1/2 space-y-6 text-center lg:text-left">
             <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight">
-              <span className="text-portfolio-primary">UX/UI Designer</span>
+              <span className="text-portfolio-primary">{heroContent.title.highlight}</span>
               <br />
-              <span>Making Impactful</span>
+              <span>{heroContent.title.line1}</span>
               <br />
-              <span>Experiences</span>
+              <span>{heroContent.title.line2}</span>
             </h1>
             
             <p className="text-lg sm:text-xl text-muted-foreground max-w-xl mx-auto lg:mx-0">
-              I've been a designer in the field since 2012, mostly as a full-stack UX Designer. I'm experienced, and love, everything from everyday design work in Figma to lead roles with a particular interest in design systems, value creation, user needs analysis, product ecosystems and design processes.
+              {heroContent.description}
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
@@ -47,9 +48,17 @@ const Hero = () => {
               <div className="bg-portfolio-primary/10 rounded-full w-[450px] h-[450px] mx-auto"></div>
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="w-[400px] h-[400px] rounded-full bg-portfolio-primary/20 flex items-center justify-center">
-                  {/* Placeholder for your profile image or illustration */}
-                  <div className="w-[350px] h-[350px] rounded-full bg-portfolio-primary/30 flex items-center justify-center text-portfolio-primary">
-                    <span className="text-xl font-semibold">Your Profile Image</span>
+                  {/* Profile image */}
+                  <div className="w-[350px] h-[350px] rounded-full bg-portfolio-primary/30 flex items-center justify-center text-portfolio-primary overflow-hidden">
+                    {heroContent.profileImage ? (
+                      <img 
+                        src={heroContent.profileImage} 
+                        alt="Profile" 
+                        className="w-full h-full object-cover" 
+                      />
+                    ) : (
+                      <span className="text-xl font-semibold">Your Profile Image</span>
+                    )}
                   </div>
                 </div>
               </div>
