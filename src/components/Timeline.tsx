@@ -10,7 +10,6 @@ import {
   sectionDescriptions,
 } from '@/data/content'
 import { useIsMobile } from '@/hooks/use-mobile'
-import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible'
 import { Button } from '@/components/ui/button'
 
 // Icon color scheme mapping for different timeline types
@@ -63,34 +62,25 @@ const TimelineItem = ({
 
   return (
     <div className={cn('relative flex', isMobile ? 'flex-col' : 'items-start')}>
-      {/* Timeline line and dot */}
-      <div
-        className={cn(
-          'flex items-center',
-          isMobile
-            ? 'mb-4 justify-start'
-            : 'absolute left-0 top-0 bottom-0 flex-col'
-        )}
-      >
-        {!isMobile && (
+      {/* Timeline line and dot - only show on desktop */}
+      {!isMobile && (
+        <div className="absolute left-0 top-0 bottom-0 flex flex-col items-center">
           <div
             className={cn('h-16 w-0.5 bg-portfolio-primary/20', {
               'opacity-0': item.id === 1,
             })}
           />
-        )}
-        <div
-          className={cn(
-            'flex h-16 w-16 shrink-0 items-center justify-center rounded-full z-10',
-            colorScheme.iconBackground
-          )}
-        >
-          {getIconByType(item.type)}
+          <div
+            className={cn(
+              'flex h-16 w-16 shrink-0 items-center justify-center rounded-full z-10',
+              colorScheme.iconBackground
+            )}
+          >
+            {getIconByType(item.type)}
+          </div>
+          {!isLast && <div className="h-full w-0.5 bg-portfolio-primary/20" />}
         </div>
-        {!isMobile && !isLast && (
-          <div className="h-full w-0.5 bg-portfolio-primary/20" />
-        )}
-      </div>
+      )}
 
       {/* Timeline content */}
       <div
@@ -112,29 +102,27 @@ const TimelineItem = ({
             <Separator className="my-3" />
             
             {isMobile ? (
-              <Collapsible open={isOpen} onOpenChange={setIsOpen}>
-                <div className="relative">
-                  <CollapsibleContent forceMount className={!isOpen ? "max-h-24 overflow-hidden" : ""}>
-                    <p className="mt-2">{item.description}</p>
-                  </CollapsibleContent>
+              <div className="relative">
+                <div className={!isOpen ? "max-h-24 overflow-hidden relative" : ""}>
+                  <p className="mt-2">{item.description}</p>
                   
                   {!isOpen && (
                     <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-white dark:from-gray-800 to-transparent" />
                   )}
-                  
-                  <Button 
-                    variant="ghost" 
-                    size="sm"
-                    onClick={() => setIsOpen(!isOpen)}
-                    className="w-full mt-2 border border-gray-200 dark:border-gray-700 text-portfolio-primary hover:bg-gray-100 dark:hover:bg-gray-700"
-                  >
-                    <span className="flex items-center justify-center w-full">
-                      {isOpen ? 'Show less' : 'Read more'}
-                      <ChevronDown className={`ml-1 h-4 w-4 transition-transform ${isOpen ? 'rotate-180' : ''}`} />
-                    </span>
-                  </Button>
                 </div>
-              </Collapsible>
+                
+                <Button 
+                  variant="ghost" 
+                  size="sm"
+                  onClick={() => setIsOpen(!isOpen)}
+                  className="w-full mt-2 border border-gray-200 dark:border-gray-700 text-portfolio-primary hover:bg-gray-100 dark:hover:bg-gray-700"
+                >
+                  <span className="flex items-center justify-center w-full">
+                    {isOpen ? 'Show less' : 'Read more'}
+                    <ChevronDown className={`ml-1 h-4 w-4 transition-transform ${isOpen ? 'rotate-180' : ''}`} />
+                  </span>
+                </Button>
+              </div>
             ) : (
               <p className="mt-2">{item.description}</p>
             )}
