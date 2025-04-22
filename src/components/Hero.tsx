@@ -3,6 +3,7 @@ import React from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowDown } from 'lucide-react';
 import { heroContent } from '@/data/content';
+import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 
 const Hero = () => {
   const scrollToProjects = () => {
@@ -45,11 +46,11 @@ const Hero = () => {
           
           <div className="lg:w-1/2">
             <div className="relative">
-              <div className="bg-portfolio-primary/10 rounded-full w-[450px] h-[450px] mx-auto"></div>
+              <div className="bg-portfolio-primary/10 rounded-full w-[450px] h-[450px] max-w-full mx-auto"></div>
               <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-[400px] h-[400px] rounded-full bg-portfolio-primary/20 flex items-center justify-center">
+                <div className="w-[400px] h-[400px] max-w-[90%] rounded-full bg-portfolio-primary/20 flex items-center justify-center">
                   {/* Profile image */}
-                  <div className="w-[350px] h-[350px] rounded-full bg-portfolio-primary/30 flex items-center justify-center text-portfolio-primary overflow-hidden">
+                  <div className="w-[350px] h-[350px] max-w-[90%] rounded-full bg-portfolio-primary/30 flex items-center justify-center text-portfolio-primary overflow-hidden">
                     {heroContent.profileImage ? (
                       <img 
                         src={heroContent.profileImage} 
@@ -57,7 +58,12 @@ const Hero = () => {
                         className="w-full h-full object-cover" 
                       />
                     ) : (
-                      <span className="text-xl font-semibold">Your Profile Image</span>
+                      <div className="text-center p-4">
+                        <p className="text-xl font-semibold mb-2">Add Your Profile Image</p>
+                        <p className="text-sm">
+                          Update the profileImage URL in src/data/content.ts
+                        </p>
+                      </div>
                     )}
                   </div>
                 </div>
