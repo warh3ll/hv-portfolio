@@ -1,4 +1,3 @@
-
 import React from 'react'
 import { Clock, Briefcase, Atom, Rocket } from 'lucide-react'
 import { Card, CardContent } from '@/components/ui/card'
@@ -131,7 +130,7 @@ const Timeline = () => {
   const isMobile = useIsMobile()
 
   return (
-    <section id="timeline" className="section bg-portfolio-secondary">
+    <section id="timeline" className="section bg-gray-300">
       <div className="container">
         <h2 className="section-title">My Experience</h2>
         <p className="text-center text-muted-foreground max-w-2xl mx-auto mb-16">
