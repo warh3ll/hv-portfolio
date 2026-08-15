@@ -1,0 +1,112 @@
+{
+  "version": 1,
+  "sdk_version": "0.26.2",
+  "path": "/functions/v1/mcp",
+  "auth": {
+    "type": "none"
+  },
+  "mcp": {
+    "server": {
+      "name": "hv-portfolio",
+      "version": "0.1.0",
+      "title": "HV Portfolio"
+    },
+    "tools": [
+      {
+        "name": "list_projects",
+        "title": "List case projects",
+        "description": "List the portfolio case projects (id, title, description, tags, featured flag). Optionally filter by tag or free-text query.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "tag": {
+              "type": "string",
+              "description": "Only return projects containing this tag (case-insensitive)."
+            },
+            "query": {
+              "type": "string",
+              "description": "Free-text match against title and description."
+            }
+          },
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "outputSchema": null
+      },
+      {
+        "name": "get_project",
+        "title": "Get case project",
+        "description": "Get the full details of a single portfolio case project by its numeric id.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer",
+              "description": "Project id, as returned by list_projects."
+            }
+          },
+          "required": [
+            "id"
+          ],
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "outputSchema": null
+      },
+      {
+        "name": "get_experience",
+        "title": "Get work experience",
+        "description": "Get Henrik's career timeline: roles, companies, years, descriptions and tags. Optionally filter by entry type.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "enum": [
+                "job",
+                "freelance",
+                "education",
+                "personal project"
+              ],
+              "description": "Only return timeline entries of this type."
+            }
+          },
+          "additionalProperties": false,
+          "$schema": "http://json-schema.org/draft-07/schema#"
+        },
+        "outputSchema": null
+      },
+      {
+        "name": "get_profile",
+        "title": "Get profile and expertise",
+        "description": "Get Henrik Vårhäll's public profile: headline intro, about-me story and areas of design expertise.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {}
+        },
+        "outputSchema": null
+      }
+    ]
+  }
+}
