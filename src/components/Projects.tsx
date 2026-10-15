@@ -10,7 +10,8 @@ const Projects = () => {
   const [filter, setFilter] = useState('All');
   const navigate = useNavigate();
   
-  const filters = ['All', 'Mobile', 'Web', 'Dashboard', 'UX Research', 'UI Design'];
+  // One filter per tag used on any case, in order of first appearance
+  const filters = ['All', ...Array.from(new Set(projectsData.flatMap(project => project.tags)))];
   
   const filteredProjects = filter === 'All' 
     ? projectsData 
@@ -20,8 +21,8 @@ const Projects = () => {
     setVisibleProjects(prev => Math.min(prev + 4, filteredProjects.length));
   };
 
-  const handleProjectClick = (projectId: number) => {
-    navigate(`/case/${projectId}`);
+  const handleProjectClick = (slug: string) => {
+    navigate(`/case/${slug}`);
   };
 
   return (
@@ -39,6 +40,7 @@ const Projects = () => {
           </p>
         ) : (
         <>
+        {filters.length > 2 && (
         <div className="flex flex-wrap justify-center gap-3 mb-12">
           {filters.map(filterName => (
             <Button
@@ -56,13 +58,14 @@ const Projects = () => {
             </Button>
           ))}
         </div>
+        )}
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredProjects.slice(0, visibleProjects).map(project => (
             <ProjectCard 
-              key={project.id} 
-              {...project} 
-              onClick={() => handleProjectClick(project.id)} 
+              key={project.slug}
+              {...project}
+              onClick={() => handleProjectClick(project.slug)}
             />
           ))}
         </div>

@@ -4,15 +4,11 @@ import { Button } from '@/components/ui/button';
 import { Eye } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
-export interface ProjectProps {
-  id: number;
-  title: string;
-  description: string;
-  image: string;
-  tags: string[];
-  featured?: boolean;
+import type { ProjectProps as CaseData } from '@/data/projects';
+
+type ProjectProps = Pick<CaseData, 'title' | 'description' | 'image' | 'tags' | 'featured'> & {
   onClick?: () => void;
-}
+};
 
 const ProjectCard: React.FC<ProjectProps> = ({
   title,
@@ -32,7 +28,7 @@ const ProjectCard: React.FC<ProjectProps> = ({
     >
       <div className="relative overflow-hidden aspect-video">
         <div 
-          className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
+          className="absolute inset-0 bg-portfolio-secondary dark:bg-gray-800 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
           style={{ backgroundImage: `url(${image})` }}
         ></div>
         <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
