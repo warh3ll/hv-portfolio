@@ -62,8 +62,10 @@ export default {
 				portfolio: {
 					// Deepened from #6C63FF to reach 4.5:1 with white (WCAG 1.4.3)
 					primary: '#5B52EE',
-					// Purple for text on dark backgrounds, where primary is too dark
-					'primary-light': '#9C97FF',
+					// Purple for text on dark backgrounds, where primary is too dark (APCA Lc 75+)
+					'primary-light': '#D4D2FF',
+					// Purple for small text on the lavender tag fills (APCA Lc 75+)
+					ink: '#4338CA',
 					secondary: '#F0EFFF',
 					accent: '#FF6584',
 					light: '#F8F9FA',

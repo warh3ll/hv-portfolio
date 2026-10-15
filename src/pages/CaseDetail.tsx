@@ -70,7 +70,7 @@ const CaseDetail = () => {
             {project.tags.map((tag, index) => (
               <li 
                 key={index}
-                className="px-3 py-1 bg-portfolio-secondary/80 dark:bg-gray-800/70 text-portfolio-primary dark:text-portfolio-primary-light text-sm rounded-full"
+                className="px-3 py-1 bg-portfolio-secondary/80 dark:bg-gray-800/70 text-portfolio-ink dark:text-portfolio-primary-light text-sm rounded-full"
               >
                 {tag}
               </li>
