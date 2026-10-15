@@ -14,7 +14,6 @@ const projectsSource = await readFile(path.join(root, "src", "data", "projects.t
 
 // Each project in src/data/projects.ts starts with `id: <n>,` followed by `title: "<title>"`
 const projects = [...projectsSource.matchAll(/id:\s*(\d+),\s*title:\s*"([^"]*)"/g)].map(([, id, title]) => ({ id, title }));
-if (projects.length === 0) throw new Error("No projects found in src/data/projects.ts");
 
 const escapeHtml = (text) => text.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 const withTitle = (title) => html.replace(/<title>[^<]*<\/title>/, `<title>${escapeHtml(title)}</title>`);

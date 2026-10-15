@@ -33,6 +33,12 @@ const Projects = () => {
           {sectionDescriptions.projects}
         </p>
         
+        {projectsData.length === 0 ? (
+          <p className="text-center text-muted-foreground border border-dashed border-portfolio-primary/40 rounded-lg py-12 px-6 max-w-2xl mx-auto">
+            New cases are on their way. Meanwhile, get in touch and I'll happily walk you through my work.
+          </p>
+        ) : (
+        <>
         <div className="flex flex-wrap justify-center gap-3 mb-12">
           {filters.map(filterName => (
             <Button
@@ -72,6 +78,8 @@ const Projects = () => {
               Load More Cases
             </Button>
           </div>
+        )}
+        </>
         )}
       </div>
     </section>
