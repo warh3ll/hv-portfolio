@@ -1,1 +1,53 @@
-Wut
+# Pages CMS (https://app.pagescms.org) editor for the portfolio's case pages.
+# Every save is a commit to main, which redeploys henrikvarhall.com.
+media:
+  input: public/images/cases
+  output: /images/cases
+
+content:
+  - name: cases
+    label: Cases
+    type: collection
+    path: content/cases
+    filename: "{primary}.md"
+    view:
+      fields: [title, featured, draft, order]
+      primary: title
+      sort: order
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: summary
+        label: Summary
+        description: One or two sentences shown on the case card and at the top of the case page.
+        type: text
+      - name: cover
+        label: Cover image
+        description: Shown on the case card and at the top of the case page (16:9 works best).
+        type: image
+      - name: tags
+        label: Tags
+        description: Used for the filter buttons above the cases.
+        type: string
+        list: true
+      - name: featured
+        label: Featured
+        description: Shows the case as a large card.
+        type: boolean
+        default: false
+      - name: order
+        label: Order
+        description: Lower numbers are shown first.
+        type: number
+        default: 10
+      - name: draft
+        label: Draft
+        description: Drafts are saved but not shown on the site.
+        type: boolean
+        default: false
+      - name: body
+        label: Case story
+        type: rich-text
+        format: markdown

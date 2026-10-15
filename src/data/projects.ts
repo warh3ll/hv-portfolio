@@ -1,42 +1,44 @@
+// Cases live in content/cases/, one Markdown file per case, and are edited in Pages CMS
+// (https://app.pagescms.org, configured by .pages.yml). The file name is the case's URL:
+// content/cases/smart-companion.md is shown at /case/smart-companion.
 
-// Project data
 export interface ProjectProps {
-  id: number;
+  slug: string;
   title: string;
   description: string;
   image: string;
   tags: string[];
   featured?: boolean;
+  order: number;
+  /** The case story, converted from Markdown to HTML at build time by scripts/cases-plugin.ts */
+  html: string;
 }
 
-export const projectsData: ProjectProps[] = [
-  {
-    id: 1,
-    title: "Mobile Banking App Redesign",
-    description: "A complete overhaul of a banking app focusing on simplifying the user journey and improving accessibility.",
-    image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
-    tags: ["Mobile", "Fintech", "UX Research"],
-    featured: true
-  },
-  {
-    id: 2,
-    title: "E-commerce Website",
-    description: "Redesigned user interface for an e-commerce platform, resulting in 40% increase in conversion rates.",
-    image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
-    tags: ["Web", "E-commerce", "UI Design"]
-  },
-  {
-    id: 3,
-    title: "Health Tracking Dashboard",
-    description: "A dashboard design for health professionals to monitor patient vitals and medication adherence.",
-    image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
-    tags: ["Dashboard", "Healthcare", "Data Visualization"]
-  },
-  {
-    id: 4,
-    title: "Travel Booking App",
-    description: "Created a seamless booking experience for a travel app, focusing on simplifying the complex checkout process.",
-    image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
-    tags: ["Mobile", "Travel", "UX Design"]
-  }
-];
+type CaseFile = { data: Record<string, unknown>; html: string };
+const files = import.meta.glob('/content/cases/*.md', { import: 'default', eager: true }) as Record<string, CaseFile>;
+
+// Pages CMS writes image paths from the site root (/images/cases/x.png); prefix the base path
+// so they also work if the site is ever served from a sub-folder.
+export const assetUrl = (src: string) =>
+  src.startsWith('/') ? `${import.meta.env.BASE_URL}${src.slice(1)}` : src;
+
+function toCase(path: string, { data, html }: CaseFile): (ProjectProps & { draft: boolean }) | null {
+  if (!data.title) return null;
+  return {
+    slug: path.split('/').pop()!.replace(/\.md$/, ''),
+    title: String(data.title),
+    description: data.summary ? String(data.summary) : '',
+    image: data.cover ? assetUrl(String(data.cover)) : '',
+    tags: Array.isArray(data.tags) ? data.tags.map(String) : [],
+    featured: Boolean(data.featured),
+    order: Number(data.order ?? 100),
+    draft: Boolean(data.draft),
+    // Root-relative image and link paths in the story get the base path too
+    html: html.replace(/(src|href)="(\/[^"]*)"/g, (_, attr, url) => `${attr}="${assetUrl(url)}"`),
+  };
+}
+
+export const projectsData: ProjectProps[] = Object.entries(files)
+  .map(([path, file]) => toCase(path, file))
+  .filter((c): c is ProjectProps & { draft: boolean } => c !== null && (import.meta.env.DEV || !c.draft))
+  .sort((a, b) => a.order - b.order || a.title.localeCompare(b.title));

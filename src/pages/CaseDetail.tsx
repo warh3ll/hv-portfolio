@@ -8,11 +8,10 @@ import { Button } from '@/components/ui/button';
 import { ArrowLeft } from 'lucide-react';
 
 const CaseDetail = () => {
-  const { id } = useParams();
+  const { slug } = useParams();
   const navigate = useNavigate();
-  const projectId = parseInt(id || '1');
   
-  const project = projectsData.find(p => p.id === projectId);
+  const project = projectsData.find(p => p.slug === slug);
   
   useEffect(() => {
     // Scroll to top when page loads
@@ -43,13 +42,15 @@ const CaseDetail = () => {
           
           <h1 className="text-3xl md:text-4xl font-bold mb-6">{project.title}</h1>
           
-          <div className="w-full aspect-video mb-10 overflow-hidden rounded-lg">
-            <img 
-              src={project.image} 
-              alt={project.title} 
-              className="w-full h-full object-cover"
-            />
-          </div>
+          {project.image && (
+            <div className="w-full aspect-video mb-10 overflow-hidden rounded-lg">
+              <img 
+                src={project.image} 
+                alt={project.title} 
+                className="w-full h-full object-cover"
+              />
+            </div>
+          )}
           
           <div className="flex flex-wrap gap-3 mb-8">
             {project.tags.map((tag, index) => (
@@ -62,31 +63,16 @@ const CaseDetail = () => {
             ))}
           </div>
           
-          <div className="prose prose-lg max-w-none dark:prose-invert">
-            <p className="text-lg text-muted-foreground mb-8">
+          {project.description && (
+            <p className="text-lg text-muted-foreground mb-8 max-w-3xl">
               {project.description}
             </p>
-            
-            <h2 className="text-2xl font-semibold mt-8 mb-4">Overview</h2>
-            <p>
-              This is a detailed case study of {project.title}. This section would contain a comprehensive overview of the project, including objectives, challenges, and approach.
-            </p>
-            
-            <h2 className="text-2xl font-semibold mt-8 mb-4">Problem</h2>
-            <p>
-              Here you would describe the problem that this project aimed to solve. What were the issues that needed addressing? What was the context? Who were the stakeholders?
-            </p>
-            
-            <h2 className="text-2xl font-semibold mt-8 mb-4">Solution</h2>
-            <p>
-              This section would detail the solution that was implemented. What technologies were used? What methodologies were followed? How was the solution designed and developed?
-            </p>
-            
-            <h2 className="text-2xl font-semibold mt-8 mb-4">Results</h2>
-            <p>
-              Finally, this section would highlight the outcomes of the project. What goals were achieved? What metrics improved? What feedback was received?
-            </p>
-          </div>
+          )}
+          
+          <div
+            className="prose prose-lg max-w-3xl dark:prose-invert prose-img:rounded-lg prose-a:text-portfolio-primary"
+            dangerouslySetInnerHTML={{ __html: project.html }}
+          />
         </div>
       </main>
       
