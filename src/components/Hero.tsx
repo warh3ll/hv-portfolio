@@ -6,13 +6,6 @@ import { heroContent } from '@/data/content';
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 
 const Hero = () => {
-  const scrollToProjects = () => {
-    const projectsSection = document.getElementById('projects');
-    if (projectsSection) {
-      projectsSection.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   return (
     <section 
       id="hero" 
@@ -34,24 +27,24 @@ const Hero = () => {
               <Button 
                 size="lg" 
                 className="bg-portfolio-primary hover:bg-portfolio-primary/80 text-white"
-                onClick={scrollToProjects}
+                asChild
               >
-                View Case
+                <a href="#projects">View Case</a>
               </Button>
             </div>
           </div>
           
-          <div className="lg:w-1/2">
+          <div className="w-full lg:w-1/2">
             <div className="relative">
-              <div className="bg-portfolio-primary/10 dark:bg-portfolio-primary/5 rounded-full w-[400px] h-[400px] max-w-full mx-auto"></div>
+              <div className="bg-portfolio-primary/10 dark:bg-portfolio-primary/5 rounded-full w-[400px] max-w-full aspect-square mx-auto"></div>
               <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-[350px] h-[350px] max-w-[90%] rounded-full bg-portfolio-primary/20 dark:bg-portfolio-primary/10 flex items-center justify-center">
+                <div className="w-[350px] max-w-[90%] aspect-square rounded-full bg-portfolio-primary/20 dark:bg-portfolio-primary/10 flex items-center justify-center">
                   {/* Profile image */}
-                  <div className="w-[300px] h-[300px] max-w-[90%] rounded-full bg-portfolio-primary/30 dark:bg-portfolio-primary/20 flex items-center justify-center text-portfolio-primary overflow-hidden">
+                  <div className="w-[300px] max-w-[90%] aspect-square rounded-full bg-portfolio-primary/30 dark:bg-portfolio-primary/20 flex items-center justify-center text-portfolio-primary overflow-hidden">
                     {heroContent.profileImage ? (
                       <img 
                         src={heroContent.profileImage} 
-                        alt="Profile" 
+                        alt="Portrait of Henrik Vårhäll" 
                         className="w-full h-full object-cover" 
                       />
                     ) : (
@@ -70,13 +63,13 @@ const Hero = () => {
         </div>
         
         <div className="mt-2 flex justify-center">
-          <button 
-            onClick={scrollToProjects}
+          <a
+            href="#projects"
             className="p-2 rounded-full bg-white dark:bg-gray-800 shadow-md text-portfolio-primary hover:bg-portfolio-primary hover:text-white dark:hover:text-white transition-colors duration-300"
-            aria-label="Scroll down"
+            aria-label="Scroll down to cases"
           >
-            <ArrowDown size={20} />
-          </button>
+            <ArrowDown size={20} aria-hidden="true" />
+          </a>
         </div>
       </div>
     </section>

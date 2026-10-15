@@ -1,6 +1,5 @@
 
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import ProjectCard from './ProjectCard';
 import { Button } from '@/components/ui/button';
 import { projectsData, sectionDescriptions } from '@/data/content';
@@ -8,7 +7,6 @@ import { projectsData, sectionDescriptions } from '@/data/content';
 const Projects = () => {
   const [visibleProjects, setVisibleProjects] = useState(4);
   const [filter, setFilter] = useState('All');
-  const navigate = useNavigate();
   
   // One filter per tag used on any case, in order of first appearance
   const filters = ['All', ...Array.from(new Set(projectsData.flatMap(project => project.tags)))];
@@ -21,9 +19,6 @@ const Projects = () => {
     setVisibleProjects(prev => Math.min(prev + 4, filteredProjects.length));
   };
 
-  const handleProjectClick = (slug: string) => {
-    navigate(`/case/${slug}`);
-  };
 
   return (
     <section id="projects" className="section bg-white dark:bg-gray-900">
@@ -41,7 +36,7 @@ const Projects = () => {
         ) : (
         <>
         {filters.length > 2 && (
-        <div className="flex flex-wrap justify-center gap-3 mb-12">
+        <div className="flex flex-wrap justify-center gap-3 mb-12" role="group" aria-label="Filter cases by tag">
           {filters.map(filterName => (
             <Button
               key={filterName}
@@ -49,6 +44,7 @@ const Projects = () => {
               className={filter === filterName 
                 ? "bg-portfolio-primary hover:bg-portfolio-primary/80" 
                 : "border-portfolio-primary text-portfolio-primary hover:bg-transparent dark:hover:bg-gray-800/30 hover:bg-portfolio-primary/10 dark:text-portfolio-primary dark:border-portfolio-primary dark:bg-transparent"}
+              aria-pressed={filter === filterName}
               onClick={() => {
                 setFilter(filterName);
                 setVisibleProjects(4);
@@ -65,7 +61,6 @@ const Projects = () => {
             <ProjectCard 
               key={project.slug}
               {...project}
-              onClick={() => handleProjectClick(project.slug)}
             />
           ))}
         </div>

@@ -74,6 +74,7 @@ const TimelineItem = ({
               'flex h-16 w-16 shrink-0 items-center justify-center rounded-full z-10',
               colorScheme.iconBackground
             )}
+            aria-hidden="true"
           >
             {getIconByType(item.type)}
           </div>
@@ -114,18 +115,22 @@ const TimelineItem = ({
                     rel="noopener noreferrer"
                   >
                     <span className="mr-1 text-sm">Visit Site</span>
-                    <ExternalLink className="h-4 w-4" />
+                    <span className="sr-only"> (opens in a new tab)</span>
+                    <ExternalLink className="h-4 w-4" aria-hidden="true" />
                   </a>
                 </Button>
               )}
             </div>
             
-            <p className="text-muted-foreground">{item.company}</p>
+            <p className="text-muted-foreground">
+              {item.company}
+              <span className="sr-only"> ({item.type})</span>
+            </p>
             <Separator className="my-3" />
             
             {isMobile ? (
               <div className="relative">
-                <div className={!isOpen ? "max-h-24 overflow-hidden relative" : ""}>
+                <div id={`timeline-description-${item.id}`} className={!isOpen ? "max-h-24 overflow-hidden relative" : ""}>
                   <p className="mt-2">{item.description}</p>
                   
                   {!isOpen && (
@@ -137,11 +142,13 @@ const TimelineItem = ({
                   variant="ghost" 
                   size="sm"
                   onClick={() => setIsOpen(!isOpen)}
+                  aria-expanded={isOpen}
+                  aria-controls={`timeline-description-${item.id}`}
                   className="w-full mt-2 border border-gray-200 dark:border-gray-700 text-portfolio-primary hover:bg-gray-100 dark:hover:bg-gray-700"
                 >
                   <span className="flex items-center justify-center w-full">
                     {isOpen ? 'Show less' : 'Read more'}
-                    <ChevronDown className={`ml-1 h-4 w-4 transition-transform ${isOpen ? 'rotate-180' : ''}`} />
+                    <ChevronDown aria-hidden="true" className={`ml-1 h-4 w-4 transition-transform ${isOpen ? 'rotate-180' : ''}`} />
                   </span>
                 </Button>
               </div>
