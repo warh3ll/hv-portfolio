@@ -12,7 +12,7 @@ const Timeline = () => {
     <section id="timeline" className="section bg-gray-100 dark:bg-gray-800">
       <div className="container">
         <h2 className="section-title dark:text-white">Experience</h2>
-        <p className="text-center text-muted-foreground max-w-2xl mx-auto mb-16 dark:text-gray-300">
+        <p className="text-center text-gray-600 max-w-2xl mx-auto mb-16 dark:text-gray-300">
           {sectionDescriptions.timeline}
         </p>
 

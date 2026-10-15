@@ -34,7 +34,7 @@ const PersonalImageGallery = () => {
                 />
               </AspectRatio>
               <div className="absolute bottom-4 left-0 right-0 text-center">
-                <p className="text-sm font-medium font-handwriting">{image.caption}</p>
+                <p className="text-sm font-medium font-handwriting text-gray-900">{image.caption}</p>
               </div>
             </div>
           );
