@@ -43,7 +43,7 @@ const Projects = () => {
               variant={filter === filterName ? "default" : "outline"}
               className={filter === filterName 
                 ? "bg-portfolio-primary hover:bg-portfolio-primary/80" 
-                : "border-portfolio-primary text-portfolio-primary hover:bg-transparent dark:hover:bg-gray-800/30 hover:bg-portfolio-primary/10 dark:text-portfolio-primary dark:border-portfolio-primary dark:bg-transparent"}
+                : "border-portfolio-primary text-portfolio-primary hover:bg-transparent dark:hover:bg-gray-800/30 hover:bg-portfolio-primary/10 dark:text-portfolio-primary-light dark:border-portfolio-primary dark:bg-transparent"}
               aria-pressed={filter === filterName}
               onClick={() => {
                 setFilter(filterName);
@@ -70,7 +70,7 @@ const Projects = () => {
             <Button 
               variant="outline" 
               size="lg"
-              className="border-portfolio-primary text-portfolio-primary hover:bg-transparent dark:hover:bg-gray-800/30 hover:bg-portfolio-primary/10 dark:text-portfolio-primary dark:border-portfolio-primary dark:bg-transparent"
+              className="border-portfolio-primary text-portfolio-primary hover:bg-transparent dark:hover:bg-gray-800/30 hover:bg-portfolio-primary/10 dark:text-portfolio-primary-light dark:border-portfolio-primary dark:bg-transparent"
               onClick={showMoreProjects}
             >
               Load More Cases

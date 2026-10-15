@@ -93,7 +93,7 @@ const TimelineItem = ({
         <Card className="w-full hover:shadow-lg transition-shadow duration-300 dark:bg-gray-800">
           <CardContent className="p-6">
             <div className="mb-2">
-              <span className="inline-block px-3 py-1 text-sm font-medium rounded-full bg-portfolio-primary/10 text-portfolio-primary dark:bg-portfolio-primary/20">
+              <span className="inline-block px-3 py-1 text-sm font-medium rounded-full bg-portfolio-primary/10 text-portfolio-primary dark:text-portfolio-primary-light dark:bg-portfolio-primary/20">
                 {item.year}
               </span>
             </div>
@@ -144,7 +144,7 @@ const TimelineItem = ({
                   onClick={() => setIsOpen(!isOpen)}
                   aria-expanded={isOpen}
                   aria-controls={`timeline-description-${item.id}`}
-                  className="w-full mt-2 border border-gray-200 dark:border-gray-700 text-portfolio-primary hover:bg-gray-100 dark:hover:bg-gray-700"
+                  className="w-full mt-2 border border-gray-200 dark:border-gray-700 text-portfolio-primary dark:text-portfolio-primary-light hover:bg-gray-100 dark:hover:bg-gray-700"
                 >
                   <span className="flex items-center justify-center w-full">
                     {isOpen ? 'Show less' : 'Read more'}

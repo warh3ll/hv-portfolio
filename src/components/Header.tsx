@@ -61,7 +61,7 @@ const Header = () => {
         Skip to content
       </a>
       <div className="container mx-auto py-4 flex justify-between items-center">
-        <a href={sectionHref('hero')} className="text-2xl font-bold text-portfolio-primary">
+        <a href={sectionHref('hero')} className="text-2xl font-bold text-portfolio-primary dark:text-portfolio-primary-light">
           ./Henrik
         </a>
 
@@ -72,7 +72,7 @@ const Header = () => {
               <a
                 key={id}
                 href={sectionHref(id)}
-                className="text-foreground dark:text-gray-200 hover:text-portfolio-primary dark:hover:text-portfolio-primary transition-colors font-bold"
+                className="text-foreground dark:text-gray-200 hover:text-portfolio-primary dark:hover:text-portfolio-primary-light transition-colors font-bold"
               >
                 {label}
               </a>
@@ -111,7 +111,7 @@ const Header = () => {
                 key={id}
                 href={sectionHref(id)}
                 onClick={() => setIsMenuOpen(false)}
-                className="py-2 text-center text-foreground dark:text-gray-200 hover:text-portfolio-primary dark:hover:text-portfolio-primary transition-colors font-bold"
+                className="py-2 text-center text-foreground dark:text-gray-200 hover:text-portfolio-primary dark:hover:text-portfolio-primary-light transition-colors font-bold"
               >
                 {label}
               </a>

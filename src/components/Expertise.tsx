@@ -40,7 +40,7 @@ const Expertise = () => {
                 className="flex flex-col items-center text-center p-4 rounded-lg bg-card shadow-sm hover:shadow-md transition-shadow duration-300"
               >
                 <div className="mb-3">
-                  <div className="p-3 bg-portfolio-primary/10 dark:bg-portfolio-primary/20 rounded-full text-portfolio-primary">
+                  <div className="p-3 bg-portfolio-primary/10 dark:bg-portfolio-primary/20 rounded-full text-portfolio-primary dark:text-portfolio-primary-light">
                     {IconComponent && <IconComponent size={28} aria-hidden="true" />}
                   </div>
                 </div>

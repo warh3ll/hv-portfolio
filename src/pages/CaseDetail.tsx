@@ -70,7 +70,7 @@ const CaseDetail = () => {
             {project.tags.map((tag, index) => (
               <li 
                 key={index}
-                className="px-3 py-1 bg-portfolio-secondary/80 dark:bg-gray-800/70 text-portfolio-primary dark:text-portfolio-primary text-sm rounded-full"
+                className="px-3 py-1 bg-portfolio-secondary/80 dark:bg-gray-800/70 text-portfolio-primary dark:text-portfolio-primary-light text-sm rounded-full"
               >
                 {tag}
               </li>
@@ -84,7 +84,7 @@ const CaseDetail = () => {
           )}
           
           <div
-            className="prose prose-lg max-w-3xl dark:prose-invert prose-img:rounded-lg prose-a:text-portfolio-primary"
+            className="prose prose-lg max-w-3xl dark:prose-invert prose-img:rounded-lg prose-a:text-portfolio-primary dark:prose-a:text-portfolio-primary-light"
             dangerouslySetInnerHTML={{ __html: project.html }}
           />
         </div>

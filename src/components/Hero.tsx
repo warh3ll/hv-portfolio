@@ -15,7 +15,7 @@ const Hero = () => {
         <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
           <div className="lg:w-1/2 space-y-6 text-center lg:text-left">
             <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight">
-              <span className="text-portfolio-primary block mb-2">{heroContent.title.highlight}</span>
+              <span className="text-portfolio-primary dark:text-portfolio-primary-light block mb-2">{heroContent.title.highlight}</span>
               <span className="text-3xl sm:text-4xl lg:text-5xl block mb-4 text-muted-foreground">Henrik Vårhäll</span>
             </h1>
             
@@ -40,7 +40,7 @@ const Hero = () => {
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="w-[350px] max-w-[90%] aspect-square rounded-full bg-portfolio-primary/20 dark:bg-portfolio-primary/10 flex items-center justify-center">
                   {/* Profile image */}
-                  <div className="w-[300px] max-w-[90%] aspect-square rounded-full bg-portfolio-primary/30 dark:bg-portfolio-primary/20 flex items-center justify-center text-portfolio-primary overflow-hidden">
+                  <div className="w-[300px] max-w-[90%] aspect-square rounded-full bg-portfolio-primary/30 dark:bg-portfolio-primary/20 flex items-center justify-center text-portfolio-primary dark:text-portfolio-primary-light overflow-hidden">
                     {heroContent.profileImage ? (
                       <img 
                         src={heroContent.profileImage} 
@@ -65,7 +65,7 @@ const Hero = () => {
         <div className="mt-2 flex justify-center">
           <a
             href="#projects"
-            className="p-2 rounded-full bg-white dark:bg-gray-800 shadow-md text-portfolio-primary hover:bg-portfolio-primary hover:text-white dark:hover:text-white transition-colors duration-300"
+            className="p-2 rounded-full bg-white dark:bg-gray-800 shadow-md text-portfolio-primary dark:text-portfolio-primary-light hover:bg-portfolio-primary hover:text-white dark:hover:text-white transition-colors duration-300"
             aria-label="Scroll down to cases"
           >
             <ArrowDown size={20} aria-hidden="true" />
